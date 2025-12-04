@@ -8,18 +8,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
 
     <style>
       body {
         margin: 0;
         font-family: "Inconsolata", monospace;
         background-color: #ffffff;
+        display: flex;
+        justify-content: center;
       }
 
       .frame {
         width: 1440px;
-        margin: 0 auto;
         background-color: #d3d3d3;
         padding: 120px 0;
       }
@@ -30,10 +31,10 @@
         background-color: white;
       }
 
-      /* HEADER */
       .header-banner {
         text-align: center;
         padding: 2em 0;
+        background-color: white;
       }
 
       .header-banner img {
@@ -41,11 +42,14 @@
         height: auto;
       }
 
-      /* NAV (JUMP LINKS) */
+      /* ─────────────── NAVIGATION ─────────────── */
       nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: #e7d8c6;
         padding: 20px 30px;
-        text-align: center;
+        gap: 40px;
       }
 
       nav a {
@@ -53,14 +57,14 @@
         font-weight: 600;
         font-size: 40px;
         color: #D7A4C5;
-        margin: 0 20px;
+        margin: 8px 20px;
       }
 
       nav a:hover {
         color: #DE3783;
       }
 
-      /* SECTIONS (same idea as your example) */
+      /* ─────────────── SECTIONS (ID LINKS) ─────────────── */
       #home,
       #education,
       #skills,
@@ -73,35 +77,141 @@
       #home {
         background-color: #244196;
         color: white;
+        padding: 0;
+        /* because the inside containers already have padding */
       }
 
-      #education {
-        background-color: #EDE8E2;
-        color: #244196;
-      }
-
-      #skills {
-        background-color: #EDE8E2;
-        color: #244196;
-      }
-
+      #education,
+      #skills,
       #projects {
         background-color: #EDE8E2;
         color: #244196;
       }
 
-      h2 {
+      /* ─────────────── ABOUT ME SECTION ─────────────── */
+      .about-container {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: 5%;
+        background-color: #244196;
+        color: white;
+        padding: 4em 80px;
+        align-items: flex-start;
+        box-sizing: border-box;
+      }
+
+      .left-column img {
+        width: 100%;
+        height: auto;
+        border: 3px solid #D7A4C5;
+        margin-top: 8em;
+        margin-bottom: 35px;
+        display: block;
+      }
+
+      .contact-box {
+        background-color: #E6D9C7;
+        color: #244196;
+        padding: 0.4em 1em;
+        border-radius: 40px;
+        display: inline-block;
+        margin-top: 0.6em;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .contact-box a {
+        color: #244196;
+        text-decoration: underline;
+      }
+
+      .right-column h1 {
         font-family: "Indie Flower", cursive;
         font-size: 60px;
-        margin: 0 0 1em 0;
+        color: #D7A4C5;
+        margin-left: 2.5em;
+        margin-bottom: 1.4em;
+        margin-top: 0.3em;
         text-transform: uppercase;
       }
 
-      /* FOOTER */
+      .right-column p {
+        font-size: 25.5px;
+        line-height: 1.6;
+        margin: 0 0 2em 0;
+        margin-right: 1.5em;
+      }
+
+      /* ─────────────── PROJECTS (inside HOME) ─────────────── */
+      .projects-home {
+        background-color: #EDE8E2;
+        padding: 4em 90px;
+        box-sizing: border-box;
+      }
+
+      .projects-home h2 {
+        font-family: "Indie Flower", cursive;
+        color: #244196;
+        font-size: 60px;
+        text-transform: uppercase;
+        margin: -0.4em 0 0.4em -0.3em;
+      }
+
+      .project-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 4.5em;
+        padding: 0;
+      }
+
+      .project-card {
+        width: 30%;
+        text-align: center;
+      }
+
+      .project-frame {
+        background-color: #E6D9C7;
+        padding: 1.1em;
+        border-radius: 22px;
+      }
+
+      .project-frame img {
+        width: 100%;
+        height: auto;
+        /* no object-fit */
+        border-radius: 18px;
+        display: block;
+      }
+
+      .project-name {
+        display: inline-block;
+        margin-top: 1em;
+        padding: 0.6em 1.4em;
+        border-radius: 60px;
+        background-color: #244196;
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      /* ─────────────── FOOTER ─────────────── */
       footer {
         text-align: center;
         padding: 1.2em 0 1em 0;
         background-color: #E6D9C7;
+      }
+
+      .footer-name {
+        font-family: "Inconsolata", monospace;
+        color: #244196;
+        font-size: 55px;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .footer-copyright {
+        margin: 1em 0 0 0;
+        font-size: 18px;
         color: #244196;
       }
     </style>
@@ -124,25 +234,73 @@
           <a href="#projects">Projects</a>
         </nav>
 
-        <!-- SECTION: HOME -->
+        <!-- HOME SECTION (contains About + your project thumbnails) -->
         <div id="home">
-          <h2>Home</h2>
-          <p>Put your Home content here (About Me, etc.).</p>
+          <div class="about-container">
+            <div class="left-column">
+              <img src="Profile.jpg" width="480" height="640" alt="Profile photo of myself">
+              <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:a383liu@uwaterloo.ca">a383liu@uwaterloo.ca</a></p>
+                <p><strong>Phone:</strong> 6477690826</p>
+              </div>
+            </div>
+
+            <div class="right-column">
+              <h1>About Me</h1>
+              <p>
+                As a junior designer, I believe meaningful digital experiences begin with understanding people.
+                I’m passionate about creating intuitive, human-centered interfaces that make users feel supported and empowered.
+              </p>
+              <p>
+                Having lived in three different countries, I’ve been shaped by diverse cultures and ways of communicating.
+                This global perspective fuels my curiosity and empathy as a designer.
+                I love exploring cultural behaviors and design traditions around the world, then weaving those insights into inclusive,
+                thoughtful digital experiences.
+              </p>
+            </div>
+          </div>
+
+          <div class="projects-home">
+            <h2>Project Overview</h2>
+
+            <div class="project-row">
+              <div class="project-card">
+                <div class="project-frame">
+                  <img src="design1.PNG" width="600" height="600" alt="Burger Ops card game design">
+                </div>
+                <p class="project-name">Card Game Design</p>
+              </div>
+
+              <div class="project-card">
+                <div class="project-frame">
+                  <img src="design2.PNG" width="800" height="450" alt="Purple Bubble Tea website redesign">
+                </div>
+                <p class="project-name">Website Redesign</p>
+              </div>
+
+              <div class="project-card">
+                <div class="project-frame">
+                  <img src="design3.PNG" width="600" height="900" alt="GBDA 101 poster design">
+                </div>
+                <p class="project-name">Poster Design</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- SECTION: EDUCATION -->
+        <!-- EDUCATION SECTION -->
         <div id="education">
           <h2>Education</h2>
           <p>Text-holder: I will add my education content here later.</p>
         </div>
 
-        <!-- SECTION: SKILLS -->
+        <!-- SKILLS SECTION -->
         <div id="skills">
           <h2>Skills</h2>
           <p>Text-holder: I will add my skills content here later.</p>
         </div>
 
-        <!-- SECTION: PROJECTS -->
+        <!-- PROJECTS SECTION -->
         <div id="projects">
           <h2>Projects</h2>
           <p>Text-holder: I will add my projects content here later.</p>
@@ -150,11 +308,11 @@
 
         <!-- FOOTER -->
         <footer>
-          © 2025 Amy Liu. All Rights Reserved.
+          <h2 class="footer-name">Amy Liu</h2>
+          <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
         </footer>
 
       </div>
     </div>
   </body>
 </html>
-```
