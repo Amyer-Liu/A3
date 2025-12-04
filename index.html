@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amy Liu Portfolio</title>
-    <!-- Created by Amy Liu on 2025 Dec 3 -->
 
     <!-- Consolidated Google Font imports for Inconsolata, Indie Flower, and Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,27 +18,34 @@
 
       :root {
         --color-primary: #244196;
+        /* Dark Blue */
         --color-secondary: #D7A4C5;
+        /* Pink/Purple */
         --color-accent: #DE3783;
+        /* Hot Pink */
         --color-light-bg: #E7D8C6;
-        --color-dark-bg: #EDE8E2;
-        --color-light-frame: #d3d3d3;
+        /* Light Beige 1 (Nav/Projects BG) */
+        --color-light-tan: #EDE8E2;
+        /* Light Beige 2 (Skills BG) */
+        --color-contact-box: #E6D9C7;
+        /* Light Beige 3 (Contact/Footer BG) */
+        --color-frame: #d3d3d3;
+        /* Outer Frame Gray */
       }
 
       body {
         margin: 0;
         font-family: "Inconsolata", monospace;
-        background-color: var(--color-light-frame);
+        background-color: var(--color-frame);
         justify-content: center;
         display: flex;
         min-height: 100vh;
       }
 
-      /* Using max-width instead of fixed width for responsiveness */
       .frame {
         width: 100%;
         max-width: 1440px;
-        background-color: var(--color-light-frame);
+        background-color: var(--color-frame);
         padding: 60px 0;
       }
 
@@ -49,9 +55,76 @@
         padding: 0;
         margin: 0 auto;
         background-color: white;
+        /* Default background for sections */
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
       }
 
+      /* =======================================================
+         SECTION STYLING (Jump Link Targets)
+         ======================================================= */
+      /* Apply minimum height and standard padding for scroll effect */
+      .content-section {
+        min-height: 80vh;
+        /* Ensures a large scroll jump */
+        padding: 4em 80px;
+        box-sizing: border-box;
+        color: black;
+        /* Default content color */
+      }
+
+      /* Specific background colors for visual separation */
+      #about {
+        background-color: var(--color-primary);
+        /* Dark Blue */
+        color: white;
+      }
+
+      #education {
+        background-color: white;
+        /* White */
+      }
+
+      #skills {
+        background-color: var(--color-light-tan);
+        /* Light Tan/Beige */
+      }
+
+      #projects {
+        background-color: var(--color-light-bg);
+        /* Light Beige 1 */
+      }
+
+      /* Shared section titles for consistency */
+      .section-title {
+        font-family: 'Indie Flower', cursive;
+        color: var(--color-primary);
+        font-size: 60px;
+        margin: 0 0 0.8em 0;
+        text-transform: uppercase;
+      }
+
+      /* Override title color for dark sections */
+      #about .section-title {
+        color: var(--color-secondary);
+      }
+
+      /* Placeholder content style */
+      .section-content {
+        font-family: 'Inconsolata', monospace;
+        font-size: 24px;
+        line-height: 1.6;
+        color: #333;
+        /* Dark gray for readability on light backgrounds */
+      }
+
+      /* Override placeholder content color for dark sections */
+      #about .section-content {
+        color: white;
+      }
+
+      /* =======================================================
+         HEADER & NAVIGATION
+         ======================================================= */
       .header-banner {
         text-align: center;
         padding: 2em 0;
@@ -62,7 +135,6 @@
         height: auto;
       }
 
-      /* ─────────────── NAVIGATION ─────────────── */
       nav {
         display: flex;
         align-items: center;
@@ -87,10 +159,6 @@
         color: var(--color-accent);
       }
 
-      nav a:visited {
-        color: #C39CB9;
-      }
-
       nav a.selected {
         color: var(--color-accent);
         display: inline-block;
@@ -109,44 +177,41 @@
 
       .logo img {
         height: 120px;
-        /* Fixed logo size */
         width: auto;
         display: block;
       }
 
-      /* ─────────────── ABOUT ME SECTION ─────────────── */
-      .section-padding {
-        padding: 4em 80px;
-      }
-
-      .about-container {
+      /* =======================================================
+         ABOUT ME CONTENT SPECIFICS (inside #about)
+         ======================================================= */
+      .about-grid {
         display: grid;
         grid-template-columns: 40% 60%;
         gap: 5%;
-        background-color: var(--color-primary);
-        color: white;
         align-items: flex-start;
-        /* Fixes vertical alignment */
       }
 
-      .left-column img {
+      .about-grid img {
         width: 100%;
         height: auto;
         border: 3px solid var(--color-secondary);
-        /* FIX: Removed problematic margin-top: 8em from the original code */
-        margin-top: 0;
         margin-bottom: 25px;
         display: block;
       }
 
       .contact-box {
+        background-color: var(--color-contact-box);
+        color: var(--color-primary);
+        padding: 0.4em 1em;
+        border-radius: 40px;
+        display: inline-block;
+        margin-top: 0.6em;
         font-size: 22px;
         line-height: 1.6;
-        margin-top: 0;
       }
 
       .contact-box a {
-        color: white;
+        color: var(--color-primary);
         text-decoration: none;
         transition: text-decoration 0.3s;
       }
@@ -155,50 +220,9 @@
         text-decoration: underline;
       }
 
-      .right-column h1 {
-        font-family: "Indie Flower", cursive;
-        font-size: 60px;
-        color: var(--color-secondary);
-        /* FIX: Removed bad margins from the original code */
-        margin: 0 0 0.5em 0;
-        text-transform: uppercase;
-      }
-
-      .right-column p {
-        font-family: "Inconsolata", monospace;
-        font-size: 24px;
-        line-height: 1.6;
-        /* FIX: Removed bad margins from the original code */
-        margin: 0 0 1.5em 0;
-      }
-
-      /* Placeholder section styles */
-      #education {
-        background-color: white;
-      }
-
-      #skills {
-        background-color: var(--color-dark-bg);
-      }
-
-      .section-title {
-        font-family: 'Indie Flower', cursive;
-        color: var(--color-primary);
-        font-size: 60px;
-        margin: 0 0 0.8em 0;
-      }
-
-      .section-content {
-        font-family: 'Inconsolata', monospace;
-        font-size: 23px;
-        line-height: 1.6;
-      }
-
-      /* ─────────────── PROJECTS ─────────────── */
-      .projects {
-        background-color: var(--color-dark-bg);
-      }
-
+      /* =======================================================
+         PROJECTS CONTENT SPECIFICS (inside #projects)
+         ======================================================= */
       .project-row {
         display: flex;
         justify-content: space-between;
@@ -212,7 +236,7 @@
       }
 
       .project-frame {
-        background-color: #E6D9C7;
+        background-color: var(--color-contact-box);
         padding: 1.1em;
         border-radius: 22px;
       }
@@ -233,7 +257,6 @@
         background-color: var(--color-primary);
         color: white;
         font-weight: 600;
-        /* Fixed unit to value */
         font-size: 18px;
         font-family: "Roboto", sans-serif;
       }
@@ -242,7 +265,7 @@
       footer {
         text-align: center;
         padding: 3em 0;
-        background-color: #E6D9C7;
+        background-color: var(--color-contact-box);
       }
 
       .footer-name {
@@ -279,7 +302,7 @@
           padding: 30px 0;
         }
 
-        .section-padding {
+        .content-section {
           padding: 2em 20px;
         }
 
@@ -309,20 +332,18 @@
         }
 
         /* About Section: Stack the columns */
-        .about-container {
+        .about-grid {
           grid-template-columns: 1fr;
           gap: 20px;
         }
 
-        .right-column h1,
-        .projects h2,
         .section-title {
           font-size: 40px;
           margin: 0 0 0.5em 0;
           text-align: center;
         }
 
-        .right-column p {
+        .section-content {
           font-size: 18px;
         }
 
@@ -358,13 +379,13 @@
 
         <!-- HEADER -->
         <div class="header-banner">
-          <img src="Banner.jpg" alt="I designed this banner using procreate" width="1080" height="300">
+          <img src="Banner.jpg" alt="Portfolio banner design" width="1080" height="300">
         </div>
 
-        <!-- NAV: Links now use the IDs of the sections below -->
+        <!-- NAV: Links to the content sections by ID -->
         <nav>
           <div class="logo">
-            <img src="Logo.PNG" alt="My logo" width="120" height="120">
+            <img src="Logo.PNG" alt="Amy Liu logo" width="120" height="120">
           </div>
 
           <!-- Jump Links -->
@@ -374,47 +395,55 @@
           <a href="#projects">Projects</a>
         </nav>
 
-        <!-- ABOUT ME (Home) Section -->
-        <div id="about" class="about-container section-padding">
-          <div class="left-column">
-            <img src="Profile.jpg" alt="My profile photo" width="400" height="600">
-            <div class="contact-box">
-              <p><strong>Email:</strong> <a href="mailto:a383liu@uwaterloo.ca">a383liu@uwaterloo.ca</a></p>
-              <p><strong>Phone:</strong> 6477690826</p>
+        <!-- 1. ABOUT ME (Home) Section -->
+        <!-- ID 'about' is the target for the 'Home' link -->
+        <div id="about" class="content-section">
+          <div class="about-grid">
+            <div class="left-column">
+              <img src="Profile.jpg" alt="Profile photo of myself" width="400" height="600">
+              <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:a383liu@uwaterloo.ca">a383liu@uwaterloo.ca</a></p>
+                <p><strong>Phone:</strong> 6477690826</p>
+              </div>
+            </div>
+            <div class="right-column">
+              <h1 class="section-title">About Me</h1>
+              <p class="section-content"> As a junior designer, I believe meaningful digital experiences begin with
+                understanding people. I’m passionate about creating intuitive, human-centered
+                interfaces that make users feel supported and empowered.</p>
+              <p class="section-content">Having lived in three different countries, I’ve been shaped by diverse cultures
+                and ways of communicating. This global perspective fuels my curiosity and empathy
+                as a designer. I love exploring cultural behaviors and design traditions around
+                the world, then weaving those insights into inclusive, thoughtful digital experiences.</p>
             </div>
           </div>
-          <div class="right-column">
-            <h1>About Me</h1>
-            <p> As a junior designer, I believe meaningful digital experiences begin with
-              understanding people. I’m passionate about creating intuitive, human-centered
-              interfaces that make users feel supported and empowered.</p>
-            <p>Having lived in three different countries, I’ve been shaped by diverse cultures
-              and ways of communicating. This global perspective fuels my curiosity and empathy
-              as a designer. I love exploring cultural behaviors and design traditions around
-              the world, then weaving those insights into inclusive, thoughtful digital experiences.</p>
-          </div>
         </div>
 
-        <!-- EDUCATION Section -->
-        <div id="education" class="section-padding">
+        <!-- 2. EDUCATION Section -->
+        <!-- ID 'education' is the target for the 'Education' link -->
+        <div id="education" class="content-section">
           <h2 class="section-title">Education & Background</h2>
-          <p class="section-content">(Content placeholder for academic and work history.)</p>
+          <p class="section-content">This section will contain details about your academic and professional history.</p>
+          <p class="section-content">For instance, key achievements, coursework, and relevant experiences will go here, making this section tall enough to require scrolling!</p>
         </div>
 
-        <!-- SKILLS Section -->
-        <div id="skills" class="section-padding">
+        <!-- 3. SKILLS Section -->
+        <!-- ID 'skills' is the target for the 'Skills' link -->
+        <div id="skills" class="content-section">
           <h2 class="section-title">Skills Summary</h2>
-          <p class="section-content">(Content placeholder for design tools, programming, and soft skills.)</p>
+          <p class="section-content">Here, you can list all your technical and creative skills.</p>
+          <p class="section-content">Think of this as a showcase of your design tools, programming languages, and soft skills (like communication and team collaboration).</p>
         </div>
 
-        <!-- PROJECT Section -->
-        <div id="projects" class="projects section-padding">
+        <!-- 4. PROJECTS Section -->
+        <!-- ID 'projects' is the target for the 'Projects' link -->
+        <div id="projects" class="content-section">
           <h2 class="section-title">Project Overview</h2>
 
           <div class="project-row">
             <div class="project-card">
               <div class="project-frame">
-                <img src="design1.PNG" alt="Burger Ops cover design" width="300" height="300">
+                <img src="design1.PNG" alt="Burger Ops card game design" width="300" height="300">
               </div>
               <p class="project-name">Card Game Design</p>
             </div>
@@ -428,7 +457,7 @@
 
             <div class="project-card">
               <div class="project-frame">
-                <img src="design3.PNG" alt="Embrace Sensitive Fun poster design" width="300" height="300">
+                <img src="design3.PNG" alt="GBDA 101 poster design" width="300" height="300">
               </div>
               <p class="project-name">Poster Design</p>
             </div>
@@ -440,7 +469,7 @@
           <h2 class="footer-name">Amy Liu</h2>
           <p class="footer-copyright">
             © 2025 Amy Liu. All Rights Reserved. |
-            <a href="https://linkedin.com/in/amyliu" target="_blank">View on LinkedIn</a>
+            <a href="https://linkedin.com/in/amyliu" target="_blank">View on LinkedIn (Placeholder)</a>
           </p>
         </footer>
       </div>
