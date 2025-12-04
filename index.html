@@ -2,217 +2,287 @@
 <html lang="en-CA">
   <head>
     <meta charset="UTF-8">
-    <title>Assignment 3</title>
-    <!-- Created by Amy Liu on 2025 Dec 3 -->
-
-    <!-- Google Font 1 - Inconsolata-->
+    <title>Portfolio - Design Template</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
-    <!-- Google Font 1 - Indie Flower-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
+      /* --- 1. General Reset & Body --- */
       body {
-        background-color: #ffffff;
-        font-family: "Inconsolata", monospace;
-        margin: 0;
+        background-color: #333; /* Dark background to highlight the 1440px frame */
+        font-family: "Quicksand", sans-serif;
+        display: flex;
         justify-content: center;
-        display: flex;
+        margin: 0;
+        padding: 20px 0;
       }
 
-      .frame {
+      /* --- 2. The 1440px Frame Requirement --- */
+      .main-frame {
         width: 1440px;
-        margin: 0 auto;
-        background-color: #d3d3d3;
-        padding: 120px 0;
-      }
-
-      .content-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: white;
-      }
-
-      /* HEADER */
-      .header-banner img {
-        width: 100%;
-        height: auto;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 56px;
-        margin: 0.5em 0 1em 0;
-        color: #244196;
-        letter-spacing: 0.03em;
-      }
-
-      /* NAVIGATION */
-      nav {
-        background-color: #e7d8c6;
-        padding: 10px 30px;
+        background-color: #fff;
         display: flex;
-        align-items: center;
-        gap: 35px;
-        border-bottom: 4px solid #d7a4c5;
+        flex-direction: column;
+        overflow: hidden; /* Keeps content inside the rounded corners if applied */
       }
 
-      nav a {
+      /* --- 3. Typography & Utilities --- */
+      h1, h2, h3 {
+        font-family: "Patrick Hand", cursive; /* Handwritten style */
+        font-weight: 400;
+        margin: 0;
+      }
+
+      p {
+        line-height: 1.6em;
+        font-size: 1.1em;
+      }
+
+      /* Use this class to enforce the 1200px content width (120px margins on left/right) */
+      .content-container {
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* --- 4. Section 1: Header/Logo --- */
+      .header-section {
+        background-color: #ffffff;
+        padding: 3em 0;
+        text-align: center;
+      }
+
+      .logo-placeholder {
+        font-family: "Patrick Hand", cursive;
+        font-size: 4em;
+        color: #1c3f8f; /* The dark blue from the reference */
+        text-transform: uppercase;
+        display: inline-block;
+        border: 4px dashed #1c3f8f;
+        padding: 0.2em 1em;
+        border-radius: 15px;
+      }
+
+      /* --- 5. Navigation Bar --- */
+      .nav-bar {
+        background-color: #eadccb; /* Beige color */
+        padding: 1.5em 0;
+      }
+
+      .nav-bar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 3em;
+      }
+
+      .nav-bar li a {
         text-decoration: none;
-        font-size: 32px;
-        font-weight: 600;
-        color: #d7a4c5;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        font-size: 1.4em;
+        color: #e58cb3; /* Pink color */
+        text-transform: uppercase;
+        transition: color 0.3s;
       }
 
-      nav a:hover {
-        color: #de3783;
+      .nav-bar li a:hover {
+        color: #c94b85;
+        text-decoration: underline;
       }
 
-      nav a:visited {
-        color: #b778a3;
-      }
-
-      nav a:active {
-        color: #ff4fa0;
-      }
-
-      .logo img {
-        height: 80px;
-      }
-
-      /* ABOUT SECTION */
-      .about-container {
-        display: grid;
-        grid-template-columns: 40% 60%;
-        gap: 2em;
-        padding: 2em;
-        background-color: #244196;
+      /* --- 6. Section 2: About Me (Blue Section) --- */
+      .about-section {
+        background-color: #1c3f8f; /* Deep Blue */
         color: white;
+        padding: 4em 0;
+      }
+
+      /* Using Grid similar to your recipe reference */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 35% 60%; /* Image left, text right */
+        gap: 5%;
+        align-items: center;
       }
 
       .about-title {
-        grid-column: 1 / 3;
-        text-align: center;
-        font-size: 48px;
-        margin-bottom: 20px;
-        letter-spacing: 0.1em;
-        color: #d7a4c5;
+        font-size: 3em;
+        margin-bottom: 0.5em;
+        text-align: right; /* Aligns title to text block */
+        color: #ffffff;
       }
 
-      .left-column img {
+      .photo-placeholder {
         width: 100%;
-        border: 4px solid white;
-      }
-
-      .right-column p {
-        font-size: 20px;
-        line-height: 1.6;
-        margin-bottom: 1em;
-      }
-
-      /* PROJECTS */
-      .projects {
-        padding: 3em 2em;
-      }
-
-      .projects h2 {
-        text-align: center;
-        font-size: 36px;
-        margin-bottom: 1em;
-      }
-
-      .project-row {
+        height: 500px;
+        background-color: #6a82ba; /* Lighter blue placeholder */
+        border: 2px solid white;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-style: italic;
+      }
+
+      .contact-info {
+        margin-top: 2em;
+        font-size: 0.9em;
+        opacity: 0.9;
+      }
+
+      /* --- 7. Section 3: Project Overview (Beige Section) --- */
+      .projects-section {
+        background-color: #f2ebe5; /* Light Beige */
+        padding: 4em 0;
+      }
+
+      .projects-title {
+        font-size: 3em;
+        color: #1c3f8f;
+        margin-bottom: 1em;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
         gap: 2em;
       }
 
       .project-card {
-        width: 33%;
         text-align: center;
       }
 
-      .project-card img {
+      .card-image-placeholder {
         width: 100%;
-        height: 180px;
-        border-radius: 10px;
+        height: 350px;
         background-color: #ddd;
+        margin-bottom: 1em;
+        border-radius: 10px; /* Rounded corners */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        border: 2px dashed #aaa;
       }
 
-      /* FOOTER */
-      footer {
-        text-align: center;
-        padding: 2em;
-        background-color: #f5f5f5;
-        font-size: 0.9em;
+      .pill-button {
+        display: inline-block;
+        background-color: #1c3f8f;
+        color: white;
+        padding: 0.5em 1.5em;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1em;
       }
+
+      /* --- 8. Section 4: Footer --- */
+      .footer-section {
+        background-color: #eadccb;
+        padding: 2em 0;
+        text-align: center;
+        color: #1c3f8f;
+      }
+
+      .copyright {
+        font-size: 0.9em;
+        font-weight: 700;
+      }
+
     </style>
   </head>
 
   <body>
-    <div class="content-wrapper">
 
-      <div class="header-banner">
-        <img src="Banner.jpg" width="1200" height="300" alt="Banner with name">
-      </div>
+    <div class="main-frame">
 
-      <!-- MAIN HEADING (h1) -->
-      <h1>Welcome to My Portfolio</h1>
-
-      <!-- NAV -->
-      <nav>
-        <div class="logo">
-          <img src="Logo.png" width="150" height="150" alt="My logo">
+      <header class="header-section">
+        <div class="content-container">
+          <div class="logo-placeholder">
+            Portfolio &mdash; Your Name
+          </div>
         </div>
+      </header>
 
-        <a href="#about"><strong>Home</strong></a>
-        <a href="https://uwaterloo.ca">Waterloo</a>
-        <a href="mailto:amyliu@uwaterloo.ca">Email Me</a>
+      <nav class="nav-bar">
+        <div class="content-container">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+          </ul>
+        </div>
       </nav>
 
-      <!-- ABOUT -->
-      <div id="about" class="about-container">
-        <h2 class="about-title">ABOUT ME</h2>
-
-        <div class="left-column">
-          <img src="Profile.jpg" width="500" height="600" alt="Profile photo">
-        </div>
-
-        <div class="right-column">
-          <p>I am a junior designer passionate about human-centered design...</p>
-          <p>Having lived in three countries, I bring a global view to my work...</p>
-        </div>
-      </div>
-
-      <!-- PROJECTS -->
-      <section class="projects">
-        <h2>Project Overview</h2>
-
-        <div class="project-row">
-          <div class="project-card">
-            <img src="project1.png" alt="Card Game Design">
-            <p>Card Game Design</p>
+      <section class="about-section">
+        <div class="content-container about-grid">
+          
+          <div class="left-column">
+            <div class="photo-placeholder">
+              [Image Placeholder: Portrait]
+            </div>
+            <div class="contact-info">
+              <p><strong>Email:</strong> your.email@example.com</p>
+              <p><strong>Phone:</strong> 123-456-7890</p>
+            </div>
           </div>
 
-          <div class="project-card">
-            <img src="project2.png" alt="Website Redesign">
-            <p>Website Redesign</p>
+          <div class="right-column">
+            <h2 class="about-title">About Me</h2>
+            <p>
+              As a junior designer, I believe meaningful digital experiences begin with understanding people. I’m passionate about creating intuitive, human-centered interfaces that make users feel supported and empowered.
+            </p>
+            <br>
+            <p>
+              Having lived in different countries, I’ve been shaped by diverse cultures and ways of communicating. This global perspective fuels my curiosity and empathy as a designer. I love exploring cultural behaviors and design traditions around the world, then weaving those insights into inclusive, thoughtful, and culturally aware digital experiences.
+            </p>
           </div>
 
-          <div class="project-card">
-            <img src="project3.png" alt="Poster Design">
-            <p>Poster Design</p>
+        </div>
+      </section>
+
+      <section class="projects-section">
+        <div class="content-container">
+          <h2 class="projects-title">Project Overview</h2>
+
+          <div class="projects-grid">
+            
+            <div class="project-card">
+              <div class="card-image-placeholder">
+                [Image: Burger App]
+              </div>
+              <span class="pill-button">Card Game Design</span>
+            </div>
+
+            <div class="project-card">
+              <div class="card-image-placeholder">
+                [Image: Bubble Tea]
+              </div>
+              <span class="pill-button">Website Redesign</span>
+            </div>
+
+            <div class="project-card">
+              <div class="card-image-placeholder">
+                [Image: Abstract Art]
+              </div>
+              <span class="pill-button">Poster Design</span>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- FOOTER -->
-      <footer>
-        © 2025 Amy Liu. All Rights Reserved.
+      <footer class="footer-section">
+        <div class="content-container">
+          <h3>Your Name</h3>
+          <p class="copyright">&copy; 2025 Your Name. All Rights Reserved.</p>
+        </div>
       </footer>
 
     </div>
+
   </body>
 </html>
