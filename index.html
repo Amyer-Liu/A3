@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amy Liu Portfolio</title>
+    <!-- Created by Amy Liu on 2025 Dec 3 -->
 
-    <!-- Consolidated Google Font imports for Inconsolata, Indie Flower, and Roboto -->
+    <!-- Consolidated Google Font imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -16,27 +17,11 @@
         scroll-behavior: smooth;
       }
 
-      :root {
-        --color-primary: #244196;
-        /* Dark Blue */
-        --color-secondary: #D7A4C5;
-        /* Pink/Purple */
-        --color-accent: #DE3783;
-        /* Hot Pink */
-        --color-light-bg: #E7D8C6;
-        /* Light Beige 1 (Nav/Projects BG) */
-        --color-light-tan: #EDE8E2;
-        /* Light Beige 2 (Skills BG) */
-        --color-contact-box: #E6D9C7;
-        /* Light Beige 3 (Contact/Footer BG) */
-        --color-frame: #d3d3d3;
-        /* Outer Frame Gray */
-      }
-
       body {
         margin: 0;
         font-family: "Inconsolata", monospace;
-        background-color: var(--color-frame);
+        background-color: #ffffff;
+        /* White background */
         justify-content: center;
         display: flex;
         min-height: 100vh;
@@ -45,7 +30,8 @@
       .frame {
         width: 100%;
         max-width: 1440px;
-        background-color: var(--color-frame);
+        background-color: #d3d3d3;
+        /* Outer Frame Gray */
         padding: 60px 0;
       }
 
@@ -59,43 +45,49 @@
       }
 
       /* =======================================================
-         SECTION STYLING (Jump Link Targets)
+         SECTION STYLING (Jump Link Targets) - Fixed Height Style
          ======================================================= */
-      /* Apply minimum height and standard padding for scroll effect */
+      /* Apply minimum height for desktop scroll effect, and standard padding */
       .content-section {
-        min-height: 80vh;
-        /* Ensures a large scroll jump for all sections */
+        min-height: 700px;
+        /* Fixed height for large sections, like your example */
         padding: 4em 80px;
         box-sizing: border-box;
         color: black;
+        overflow: hidden;
+        /* Prevent horizontal scroll if content pushes out */
       }
 
-      /* Specific background colors for visual separation */
+      /* 1. HOME Section (About Me + Project Overview) */
       #about {
-        background-color: var(--color-primary);
+        background-color: #244196;
         /* Dark Blue */
         color: white;
       }
 
+      /* 2. EDUCATION Section */
       #education {
         background-color: white;
         /* White */
       }
 
+      /* 3. SKILLS Section */
       #skills {
-        background-color: var(--color-light-tan);
-        /* Light Tan/Beige */
+        background-color: #EDE8E2;
+        /* Light Beige 2 (Light Tan) */
       }
 
+      /* 4. PROJECTS Placeholder Section */
       #projects {
-        background-color: var(--color-light-bg);
+        background-color: #E7D8C6;
         /* Light Beige 1 */
       }
 
       /* Shared section titles for consistency */
       .section-title {
         font-family: 'Indie Flower', cursive;
-        color: var(--color-primary);
+        color: #244196;
+        /* Dark Blue */
         font-size: 60px;
         margin: 0 0 0.8em 0;
         text-transform: uppercase;
@@ -103,10 +95,10 @@
 
       /* Override title color for dark sections */
       #about .section-title {
-        color: var(--color-secondary);
+        color: #D7A4C5;
+        /* Pink/Purple */
       }
 
-      /* Placeholder content style */
       .section-content {
         font-family: 'Inconsolata', monospace;
         font-size: 24px;
@@ -136,7 +128,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--color-light-bg);
+        background-color: #E7D8C6;
+        /* Light Beige 1 */
         padding: 20px 30px;
         gap: 40px;
         flex-wrap: nowrap;
@@ -146,18 +139,21 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 30px;
-        color: var(--color-secondary);
+        color: #D7A4C5;
+        /* Pink/Purple */
         margin: 8px 15px;
         transition: color 0.3s;
         white-space: nowrap;
       }
 
       nav a:hover {
-        color: var(--color-accent);
+        color: #DE3783;
+        /* Hot Pink */
       }
 
       nav a.selected {
-        color: var(--color-accent);
+        color: #DE3783;
+        /* Hot Pink */
         display: inline-block;
         text-decoration: underline;
         text-decoration-thickness: 8px;
@@ -191,14 +187,17 @@
       .about-grid img {
         width: 100%;
         height: auto;
-        border: 3px solid var(--color-secondary);
+        border: 3px solid #D7A4C5;
+        /* Pink/Purple */
         margin-bottom: 25px;
         display: block;
       }
 
       .contact-box {
-        background-color: var(--color-contact-box);
-        color: var(--color-primary);
+        background-color: #E6D9C7;
+        /* Light Beige 3 */
+        color: #244196;
+        /* Dark Blue */
         padding: 0.4em 1em;
         border-radius: 40px;
         display: inline-block;
@@ -208,7 +207,8 @@
       }
 
       .contact-box a {
-        color: var(--color-primary);
+        color: #244196;
+        /* Dark Blue */
         text-decoration: none;
         transition: text-decoration 0.3s;
       }
@@ -217,14 +217,15 @@
         text-decoration: underline;
       }
 
-      /* New style for the sub-header in the Home section */
       .sub-section-title {
         font-family: 'Indie Flower', cursive;
-        color: var(--color-secondary);
+        color: #D7A4C5;
+        /* Pink/Purple */
         font-size: 45px;
         text-transform: uppercase;
         margin: 1.5em 0 0.8em 0;
-        border-top: 2px solid var(--color-secondary);
+        border-top: 2px solid #D7A4C5;
+        /* Pink/Purple */
         padding-top: 1.5em;
       }
 
@@ -244,7 +245,8 @@
       }
 
       .project-frame {
-        background-color: var(--color-contact-box);
+        background-color: #E6D9C7;
+        /* Light Beige 3 */
         padding: 1.1em;
         border-radius: 22px;
       }
@@ -262,9 +264,10 @@
         margin-top: 20px;
         padding: 12px 30px;
         border-radius: 50px;
-        background-color: var(--color-contact-box);
-        /* Changed to light bg for visibility */
-        color: var(--color-primary);
+        background-color: #E6D9C7;
+        /* Light Beige 3 */
+        color: #244196;
+        /* Dark Blue */
         font-weight: 600;
         font-size: 18px;
         font-family: "Roboto", sans-serif;
@@ -275,12 +278,14 @@
       footer {
         text-align: center;
         padding: 3em 0;
-        background-color: var(--color-contact-box);
+        background-color: #E6D9C7;
+        /* Light Beige 3 */
       }
 
       .footer-name {
         font-family: "Inconsolata", monospace;
-        color: var(--color-primary);
+        color: #244196;
+        /* Dark Blue */
         font-size: 55px;
         margin: 0;
         line-height: 1;
@@ -290,11 +295,13 @@
       .footer-copyright {
         margin: 1em 0 0 0;
         font-size: 18px;
-        color: var(--color-primary);
+        color: #244196;
+        /* Dark Blue */
       }
 
       .footer-copyright a {
-        color: var(--color-primary);
+        color: #244196;
+        /* Dark Blue */
         text-decoration: none;
         transition: text-decoration 0.3s;
       }
@@ -312,10 +319,11 @@
           padding: 30px 0;
         }
 
+        /* Override fixed height for mobile to allow content to flow naturally */
         .content-section {
+          min-height: 500px;
+          height: auto;
           padding: 2em 20px;
-          min-height: 50vh;
-          /* Reduced minimum height for mobile */
         }
 
         .header-banner {
@@ -493,10 +501,7 @@
         <!-- FOOTER -->
         <footer>
           <h2 class="footer-name">Amy Liu</h2>
-          <p class="footer-copyright">
-            © 2025 Amy Liu. All Rights Reserved. |
-            <a href="https://linkedin.com/in/amyliu" target="_blank">View on LinkedIn (Placeholder)</a>
-          </p>
+          <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
         </footer>
       </div>
     </div>
