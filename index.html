@@ -2,118 +2,35 @@
 <html lang="en-CA">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amy Liu Portfolio</title>
+    <title>Assignment 3</title>
     <!-- Created by Amy Liu on 2025 Dec 3 -->
 
-    <!-- Consolidated Google Font imports -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&display=swap" rel="stylesheet">
 
     <style>
-      /* Enables smooth scrolling when using jump links */
-      html {
-        scroll-behavior: smooth;
-      }
-
       body {
         margin: 0;
         font-family: "Inconsolata", monospace;
         background-color: #ffffff;
-        /* White background */
-        justify-content: center;
-        display: flex;
-        min-height: 100vh;
       }
 
       .frame {
-        width: 100%;
-        max-width: 1440px;
+        width: 1440px;
+        margin: 0 auto;
         background-color: #d3d3d3;
-        /* Outer Frame Gray */
-        padding: 60px 0;
+        padding: 120px 0;
       }
 
       .content-wrapper {
-        width: 95%;
-        max-width: 1200px;
-        padding: 0;
+        width: 1200px;
         margin: 0 auto;
         background-color: white;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
       }
 
-      /* =======================================================
-         SECTION STYLING (Jump Link Targets) - Fixed Height Style
-         ======================================================= */
-      /* Apply minimum height for desktop scroll effect, and standard padding */
-      .content-section {
-        min-height: 700px;
-        /* Fixed height for large sections, like your example */
-        padding: 4em 80px;
-        box-sizing: border-box;
-        color: black;
-        overflow: hidden;
-        /* Prevent horizontal scroll if content pushes out */
-      }
-
-      /* 1. HOME Section (About Me + Project Overview) */
-      #about {
-        background-color: #244196;
-        /* Dark Blue */
-        color: white;
-      }
-
-      /* 2. EDUCATION Section */
-      #education {
-        background-color: white;
-        /* White */
-      }
-
-      /* 3. SKILLS Section */
-      #skills {
-        background-color: #EDE8E2;
-        /* Light Beige 2 (Light Tan) */
-      }
-
-      /* 4. PROJECTS Placeholder Section */
-      #projects {
-        background-color: #E7D8C6;
-        /* Light Beige 1 */
-      }
-
-      /* Shared section titles for consistency */
-      .section-title {
-        font-family: 'Indie Flower', cursive;
-        color: #244196;
-        /* Dark Blue */
-        font-size: 60px;
-        margin: 0 0 0.8em 0;
-        text-transform: uppercase;
-      }
-
-      /* Override title color for dark sections */
-      #about .section-title {
-        color: #D7A4C5;
-        /* Pink/Purple */
-      }
-
-      .section-content {
-        font-family: 'Inconsolata', monospace;
-        font-size: 24px;
-        line-height: 1.6;
-        color: #333;
-      }
-
-      /* Override placeholder content color for dark sections */
-      #about .section-content {
-        color: white;
-      }
-
-      /* =======================================================
-         HEADER & NAVIGATION
-         ======================================================= */
+      /* HEADER */
       .header-banner {
         text-align: center;
         padding: 2em 0;
@@ -124,386 +41,120 @@
         height: auto;
       }
 
+      /* NAV (JUMP LINKS) */
       nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #E7D8C6;
-        /* Light Beige 1 */
+        background-color: #e7d8c6;
         padding: 20px 30px;
-        gap: 40px;
-        flex-wrap: nowrap;
+        text-align: center;
       }
 
       nav a {
         text-decoration: none;
         font-weight: 600;
-        font-size: 30px;
+        font-size: 40px;
         color: #D7A4C5;
-        /* Pink/Purple */
-        margin: 8px 15px;
-        transition: color 0.3s;
-        white-space: nowrap;
+        margin: 0 20px;
       }
 
       nav a:hover {
         color: #DE3783;
-        /* Hot Pink */
       }
 
-      nav a.selected {
-        color: #DE3783;
-        /* Hot Pink */
-        display: inline-block;
-        text-decoration: underline;
-        text-decoration-thickness: 8px;
-        text-underline-offset: 10px;
+      /* SECTIONS (same idea as your example) */
+      #home,
+      #education,
+      #skills,
+      #projects {
+        min-height: 700px;
+        padding: 60px 80px;
+        box-sizing: border-box;
       }
 
-      .logo {
-        width: 140px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 30px;
+      #home {
+        background-color: #244196;
+        color: white;
       }
 
-      .logo img {
-        height: 120px;
-        width: auto;
-        display: block;
-      }
-
-      /* =======================================================
-         ABOUT ME CONTENT SPECIFICS (inside #about)
-         ======================================================= */
-      .about-grid {
-        display: grid;
-        grid-template-columns: 40% 60%;
-        gap: 5%;
-        align-items: flex-start;
-      }
-
-      .about-grid img {
-        width: 100%;
-        height: auto;
-        border: 3px solid #D7A4C5;
-        /* Pink/Purple */
-        margin-bottom: 25px;
-        display: block;
-      }
-
-      .contact-box {
-        background-color: #E6D9C7;
-        /* Light Beige 3 */
+      #education {
+        background-color: #EDE8E2;
         color: #244196;
-        /* Dark Blue */
-        padding: 0.4em 1em;
-        border-radius: 40px;
-        display: inline-block;
-        margin-top: 0.6em;
-        font-size: 22px;
-        line-height: 1.6;
       }
 
-      .contact-box a {
+      #skills {
+        background-color: #EDE8E2;
         color: #244196;
-        /* Dark Blue */
-        text-decoration: none;
-        transition: text-decoration 0.3s;
       }
 
-      .contact-box a:hover {
-        text-decoration: underline;
+      #projects {
+        background-color: #EDE8E2;
+        color: #244196;
       }
 
-      .sub-section-title {
-        font-family: 'Indie Flower', cursive;
-        color: #D7A4C5;
-        /* Pink/Purple */
-        font-size: 45px;
+      h2 {
+        font-family: "Indie Flower", cursive;
+        font-size: 60px;
+        margin: 0 0 1em 0;
         text-transform: uppercase;
-        margin: 1.5em 0 0.8em 0;
-        border-top: 2px solid #D7A4C5;
-        /* Pink/Purple */
-        padding-top: 1.5em;
       }
 
-      /* =======================================================
-         PROJECTS CARD STYLES (now inside #about)
-         ======================================================= */
-      .project-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        padding: 0;
-      }
-
-      .project-card {
-        width: 31%;
-        text-align: center;
-      }
-
-      .project-frame {
-        background-color: #E6D9C7;
-        /* Light Beige 3 */
-        padding: 1.1em;
-        border-radius: 22px;
-      }
-
-      .project-frame img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 18px;
-        display: block;
-      }
-
-      .project-name {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 30px;
-        border-radius: 50px;
-        background-color: #E6D9C7;
-        /* Light Beige 3 */
-        color: #244196;
-        /* Dark Blue */
-        font-weight: 600;
-        font-size: 18px;
-        font-family: "Roboto", sans-serif;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      /* ─────────────── FOOTER ─────────────── */
+      /* FOOTER */
       footer {
         text-align: center;
-        padding: 3em 0;
+        padding: 1.2em 0 1em 0;
         background-color: #E6D9C7;
-        /* Light Beige 3 */
-      }
-
-      .footer-name {
-        font-family: "Inconsolata", monospace;
         color: #244196;
-        /* Dark Blue */
-        font-size: 55px;
-        margin: 0;
-        line-height: 1;
-        margin-top: -0.1em;
-      }
-
-      .footer-copyright {
-        margin: 1em 0 0 0;
-        font-size: 18px;
-        color: #244196;
-        /* Dark Blue */
-      }
-
-      .footer-copyright a {
-        color: #244196;
-        /* Dark Blue */
-        text-decoration: none;
-        transition: text-decoration 0.3s;
-      }
-
-      .footer-copyright a:hover {
-        text-decoration: underline;
-      }
-
-      /* =======================================================
-         MOBILE RESPONSIVENESS
-         ======================================================= */
-      @media (max-width: 768px) {
-
-        .frame {
-          padding: 30px 0;
-        }
-
-        /* Override fixed height for mobile to allow content to flow naturally */
-        .content-section {
-          min-height: 500px;
-          height: auto;
-          padding: 2em 20px;
-        }
-
-        .header-banner {
-          padding: 1em 0;
-        }
-
-        /* Nav Bar: Stack links and reduce font size */
-        nav {
-          flex-direction: column;
-          gap: 15px;
-          padding: 15px 10px;
-        }
-
-        .logo {
-          width: 80px;
-          margin-right: 0;
-        }
-
-        .logo img {
-          height: 80px;
-        }
-
-        nav a {
-          font-size: 20px;
-          margin: 0 10px;
-        }
-
-        /* About Section: Stack the columns */
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .section-title,
-        .sub-section-title {
-          font-size: 40px;
-          margin: 0 0 0.5em 0;
-          text-align: center;
-        }
-
-        .sub-section-title {
-          padding-top: 1em;
-          margin-top: 1em;
-        }
-
-        .section-content {
-          font-size: 18px;
-        }
-
-        /* Projects: Stack cards vertically */
-        .project-row {
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .project-card {
-          width: 100%;
-        }
-
-        .project-frame img {
-          height: 200px;
-        }
-
-        .footer-name {
-          font-size: 30px;
-        }
-
-        .footer-copyright {
-          font-size: 14px;
-        }
       }
     </style>
   </head>
 
   <body>
     <div class="frame">
-
       <div class="content-wrapper">
 
         <!-- HEADER -->
         <div class="header-banner">
-          <img src="Banner.jpg" alt="Portfolio banner design" width="1080" height="300">
+          <img src="Banner.jpg" width="1080" height="360" alt="Portfolio banner designed in Procreate">
         </div>
 
-        <!-- NAV: Links to the content sections by ID -->
+        <!-- NAV (Jump links) -->
         <nav>
-          <div class="logo">
-            <img src="Logo.PNG" alt="Amy Liu logo" width="120" height="120">
-          </div>
-
-          <!-- Jump Links -->
-          <a href="#about" class="selected"><strong>Home</strong></a>
+          <a href="#home">Home</a>
           <a href="#education">Education</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
         </nav>
 
-        <!-- 1. HOME (About Me + Project Overview) Section -->
-        <!-- ID 'about' is the target for the 'Home' link -->
-        <div id="about" class="content-section">
-
-          <!-- ABOUT ME GRID -->
-          <div class="about-grid">
-            <div class="left-column">
-              <img src="Profile.jpg" alt="Profile photo of myself" width="400" height="600">
-              <div class="contact-box">
-                <p><strong>Email:</strong> <a href="mailto:a383liu@uwaterloo.ca">a383liu@uwaterloo.ca</a></p>
-                <p><strong>Phone:</strong> 6477690826</p>
-              </div>
-            </div>
-            <div class="right-column">
-              <h1 class="section-title">About Me</h1>
-              <p class="section-content"> As a junior designer, I believe meaningful digital experiences begin with
-                understanding people. I’m passionate about creating intuitive, human-centered
-                interfaces that make users feel supported and empowered.</p>
-              <p class="section-content">Having lived in three different countries, I’ve been shaped by diverse cultures
-                and ways of communicating. This global perspective fuels my curiosity and empathy
-                as a designer. I love exploring cultural behaviors and design traditions around
-                the world, then weaving those insights into inclusive, thoughtful digital experiences.</p>
-            </div>
-          </div>
-
-          <!-- PROJECT OVERVIEW (Sub-section of Home) -->
-          <h2 class="sub-section-title">Selected Projects</h2>
-
-          <div class="project-row">
-            <div class="project-card">
-              <div class="project-frame">
-                <img src="design1.PNG" alt="Burger Ops card game design" width="300" height="300">
-              </div>
-              <p class="project-name">Card Game Design</p>
-            </div>
-
-            <div class="project-card">
-              <div class="project-frame">
-                <img src="design2.PNG" alt="Purple Bubble Tea website redesign preview" width="300" height="300">
-              </div>
-              <p class="project-name">Website Redesign</p>
-            </div>
-
-            <div class="project-card">
-              <div class="project-frame">
-                <img src="design3.PNG" alt="GBDA 101 poster design" width="300" height="300">
-              </div>
-              <p class="project-name">Poster Design</p>
-            </div>
-          </div>
-
+        <!-- SECTION: HOME -->
+        <div id="home">
+          <h2>Home</h2>
+          <p>Put your Home content here (About Me, etc.).</p>
         </div>
 
-        <!-- 2. EDUCATION Section -->
-        <!-- ID 'education' is the target for the 'Education' link -->
-        <div id="education" class="content-section">
-          <h2 class="section-title">Education & Background</h2>
-          <p class="section-content">This section will contain details about your academic and professional history.</p>
-          <p class="section-content">List your schooling, degrees, and any relevant coursework here. This is designed to be a tall section for scroll effect.</p>
+        <!-- SECTION: EDUCATION -->
+        <div id="education">
+          <h2>Education</h2>
+          <p>Text-holder: I will add my education content here later.</p>
         </div>
 
-        <!-- 3. SKILLS Section -->
-        <!-- ID 'skills' is the target for the 'Skills' link -->
-        <div id="skills" class="content-section">
-          <h2 class="section-title">Skills Summary</h2>
-          <p class="section-content">Here, you can list all your technical and creative skills.</p>
-          <p class="section-content">Use bullet points or lists to showcase design tools, programming knowledge, and soft skills (like communication, research, and team collaboration).</p>
+        <!-- SECTION: SKILLS -->
+        <div id="skills">
+          <h2>Skills</h2>
+          <p>Text-holder: I will add my skills content here later.</p>
         </div>
 
-        <!-- 4. PROJECTS (Placeholder) Section -->
-        <!-- ID 'projects' is the target for the 'Projects' link -->
-        <div id="projects" class="content-section">
-          <h2 class="section-title">Full Project Portfolio</h2>
-          <p class="section-content">This section is currently a placeholder for when you are ready to include more in-depth project case studies.</p>
-          <p class="section-content">You can replace this text with detailed project descriptions, including problem statements, processes, and final outcomes. For now, the quick overview is available on the Home tab!</p>
+        <!-- SECTION: PROJECTS -->
+        <div id="projects">
+          <h2>Projects</h2>
+          <p>Text-holder: I will add my projects content here later.</p>
         </div>
 
         <!-- FOOTER -->
         <footer>
-          <h2 class="footer-name">Amy Liu</h2>
-          <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
+          © 2025 Amy Liu. All Rights Reserved.
         </footer>
+
       </div>
     </div>
   </body>
 </html>
+```
