@@ -55,7 +55,6 @@
         padding: 0;
         margin: 0 auto;
         background-color: white;
-        /* Default background for sections */
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
       }
 
@@ -65,11 +64,10 @@
       /* Apply minimum height and standard padding for scroll effect */
       .content-section {
         min-height: 80vh;
-        /* Ensures a large scroll jump */
+        /* Ensures a large scroll jump for all sections */
         padding: 4em 80px;
         box-sizing: border-box;
         color: black;
-        /* Default content color */
       }
 
       /* Specific background colors for visual separation */
@@ -114,7 +112,6 @@
         font-size: 24px;
         line-height: 1.6;
         color: #333;
-        /* Dark gray for readability on light backgrounds */
       }
 
       /* Override placeholder content color for dark sections */
@@ -220,8 +217,19 @@
         text-decoration: underline;
       }
 
+      /* New style for the sub-header in the Home section */
+      .sub-section-title {
+        font-family: 'Indie Flower', cursive;
+        color: var(--color-secondary);
+        font-size: 45px;
+        text-transform: uppercase;
+        margin: 1.5em 0 0.8em 0;
+        border-top: 2px solid var(--color-secondary);
+        padding-top: 1.5em;
+      }
+
       /* =======================================================
-         PROJECTS CONTENT SPECIFICS (inside #projects)
+         PROJECTS CARD STYLES (now inside #about)
          ======================================================= */
       .project-row {
         display: flex;
@@ -254,11 +262,13 @@
         margin-top: 20px;
         padding: 12px 30px;
         border-radius: 50px;
-        background-color: var(--color-primary);
-        color: white;
+        background-color: var(--color-contact-box);
+        /* Changed to light bg for visibility */
+        color: var(--color-primary);
         font-weight: 600;
         font-size: 18px;
         font-family: "Roboto", sans-serif;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
       /* ─────────────── FOOTER ─────────────── */
@@ -304,6 +314,8 @@
 
         .content-section {
           padding: 2em 20px;
+          min-height: 50vh;
+          /* Reduced minimum height for mobile */
         }
 
         .header-banner {
@@ -337,10 +349,16 @@
           gap: 20px;
         }
 
-        .section-title {
+        .section-title,
+        .sub-section-title {
           font-size: 40px;
           margin: 0 0 0.5em 0;
           text-align: center;
+        }
+
+        .sub-section-title {
+          padding-top: 1em;
+          margin-top: 1em;
         }
 
         .section-content {
@@ -395,9 +413,11 @@
           <a href="#projects">Projects</a>
         </nav>
 
-        <!-- 1. ABOUT ME (Home) Section -->
+        <!-- 1. HOME (About Me + Project Overview) Section -->
         <!-- ID 'about' is the target for the 'Home' link -->
         <div id="about" class="content-section">
+
+          <!-- ABOUT ME GRID -->
           <div class="about-grid">
             <div class="left-column">
               <img src="Profile.jpg" alt="Profile photo of myself" width="400" height="600">
@@ -417,28 +437,9 @@
                 the world, then weaving those insights into inclusive, thoughtful digital experiences.</p>
             </div>
           </div>
-        </div>
 
-        <!-- 2. EDUCATION Section -->
-        <!-- ID 'education' is the target for the 'Education' link -->
-        <div id="education" class="content-section">
-          <h2 class="section-title">Education & Background</h2>
-          <p class="section-content">This section will contain details about your academic and professional history.</p>
-          <p class="section-content">For instance, key achievements, coursework, and relevant experiences will go here, making this section tall enough to require scrolling!</p>
-        </div>
-
-        <!-- 3. SKILLS Section -->
-        <!-- ID 'skills' is the target for the 'Skills' link -->
-        <div id="skills" class="content-section">
-          <h2 class="section-title">Skills Summary</h2>
-          <p class="section-content">Here, you can list all your technical and creative skills.</p>
-          <p class="section-content">Think of this as a showcase of your design tools, programming languages, and soft skills (like communication and team collaboration).</p>
-        </div>
-
-        <!-- 4. PROJECTS Section -->
-        <!-- ID 'projects' is the target for the 'Projects' link -->
-        <div id="projects" class="content-section">
-          <h2 class="section-title">Project Overview</h2>
+          <!-- PROJECT OVERVIEW (Sub-section of Home) -->
+          <h2 class="sub-section-title">Selected Projects</h2>
 
           <div class="project-row">
             <div class="project-card">
@@ -462,6 +463,31 @@
               <p class="project-name">Poster Design</p>
             </div>
           </div>
+
+        </div>
+
+        <!-- 2. EDUCATION Section -->
+        <!-- ID 'education' is the target for the 'Education' link -->
+        <div id="education" class="content-section">
+          <h2 class="section-title">Education & Background</h2>
+          <p class="section-content">This section will contain details about your academic and professional history.</p>
+          <p class="section-content">List your schooling, degrees, and any relevant coursework here. This is designed to be a tall section for scroll effect.</p>
+        </div>
+
+        <!-- 3. SKILLS Section -->
+        <!-- ID 'skills' is the target for the 'Skills' link -->
+        <div id="skills" class="content-section">
+          <h2 class="section-title">Skills Summary</h2>
+          <p class="section-content">Here, you can list all your technical and creative skills.</p>
+          <p class="section-content">Use bullet points or lists to showcase design tools, programming knowledge, and soft skills (like communication, research, and team collaboration).</p>
+        </div>
+
+        <!-- 4. PROJECTS (Placeholder) Section -->
+        <!-- ID 'projects' is the target for the 'Projects' link -->
+        <div id="projects" class="content-section">
+          <h2 class="section-title">Full Project Portfolio</h2>
+          <p class="section-content">This section is currently a placeholder for when you are ready to include more in-depth project case studies.</p>
+          <p class="section-content">You can replace this text with detailed project descriptions, including problem statements, processes, and final outcomes. For now, the quick overview is available on the Home tab!</p>
         </div>
 
         <!-- FOOTER -->
