@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title>Assignment 3</title>
-    <!-- Created by Amy Liu on 2025 Dec 3 -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,9 +26,11 @@
 
       .content-wrapper {
         width: 1200px;
-        padding: 0;
         margin: 0 auto;
         background-color: white;
+
+        /* ✅ ADDED: space so fixed nav does not cover the banner */
+        padding-top: 160px;
       }
 
       .header-banner {
@@ -50,6 +51,15 @@
         background-color: #e7d8c6;
         padding: 20px 30px;
         gap: 40px;
+
+        /* ✅ ADDED: nav stays visible, and allows :target CSS to work */
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1200px;
+        box-sizing: border-box;
+        z-index: 999;
       }
 
       nav a {
@@ -60,28 +70,9 @@
         margin: 8px 20px;
       }
 
+      /* ✅ hover = pink (just hover, no underline required) */
       nav a:hover {
         color: #DE3783;
-      }
-
-      /* NOTE: keep visited BEFORE selected so "selected" wins */
-      nav a:visited {
-        color: #C39CB9;
-      }
-
-      /* ✅ CSS-only "selected" style:
-         - default selected uses class="selected"
-         - clicked link becomes :focus automatically in browser */
-      nav a.selected,
-      nav a:focus,
-      nav a:active {
-        color: #DE3783;
-        font-weight: 800;
-        text-decoration: underline;
-        text-decoration-thickness: 8px;
-        text-underline-offset: 10px;
-        outline: none;
-        /* removes default focus outline */
       }
 
       .logo {
@@ -98,7 +89,7 @@
         display: block;
       }
 
-      /* ─────────────── ID Links Sections ─────────────── */
+      /* ─────────────── SECTIONS ─────────────── */
       #home,
       #education,
       #skills,
@@ -112,7 +103,7 @@
         background-color: #244196;
         color: white;
         padding: 0;
-        /* because your home section has its own padding inside */
+        /* because home content has its own padding below */
       }
 
       #education,
@@ -164,7 +155,6 @@
       }
 
       .right-column p {
-        font-family: "Inconsolata", monospace;
         font-size: 25.5px;
         line-height: 1.6;
         margin: 0 0 4em 0;
@@ -172,7 +162,7 @@
         margin-right: 1.5em;
       }
 
-      /* ─────────────── PROJECTS ─────────────── */
+      /* ─────────────── PROJECTS (inside home) ─────────────── */
       .projects {
         background-color: #EDE8E2;
         padding: 4em 90px;
@@ -207,7 +197,6 @@
       .project-frame img {
         width: 100%;
         height: auto;
-        /* (kept simple: no object-fit) */
         border-radius: 18px;
         display: block;
       }
@@ -230,7 +219,6 @@
       }
 
       .footer-name {
-        font-family: "Inconsolata", monospace;
         color: #244196;
         font-size: 55px;
         margin: 0;
@@ -243,6 +231,35 @@
         font-size: 18px;
         color: #244196;
       }
+
+      /* ─────────────── ✅ STICKY "CLICKED" STYLE (NO SCRIPT) ─────────────── */
+      /* Default selected if page loads with no #hash */
+      nav a.selected {
+        color: #DE3783;
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-thickness: 8px;
+        text-underline-offset: 10px;
+      }
+
+      /* ✅ When ANY section becomes :target, remove the default .selected look */
+      :target~nav a.selected {
+        color: #D7A4C5;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      /* ✅ When a section is targeted, underline the matching nav link */
+      #home:target~nav a[href="#home"],
+      #education:target~nav a[href="#education"],
+      #skills:target~nav a[href="#skills"],
+      #projects:target~nav a[href="#projects"] {
+        color: #DE3783;
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-thickness: 8px;
+        text-underline-offset: 10px;
+      }
     </style>
   </head>
 
@@ -254,19 +271,6 @@
         <div class="header-banner">
           <img src="Banner.jpg" width="1080" height="360" alt="Portfolio banner designed in Procreate">
         </div>
-
-        <!-- NAV -->
-        <nav>
-          <div class="logo">
-            <img src="Logo.PNG" width="120" height="120" alt="Amy Liu logo">
-          </div>
-
-          <!-- ✅ Default selected -->
-          <a class="selected" href="#home">Home</a>
-          <a href="#education">Education</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-        </nav>
 
         <!-- HOME SECTION -->
         <div id="home">
@@ -295,10 +299,8 @@
             </div>
           </div>
 
-          <!-- PROJECT OVERVIEW (still part of Home for now) -->
           <div class="projects">
             <h2>Project Overview</h2>
-
             <div class="project-row">
               <div class="project-card">
                 <div class="project-frame">
@@ -347,6 +349,19 @@
           <h2 class="footer-name">Amy Liu</h2>
           <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
         </footer>
+
+        <!-- ✅ IMPORTANT: NAV is placed AFTER sections so :target can style it -->
+        <nav>
+          <div class="logo">
+            <img src="Logo.PNG" width="120" height="120" alt="Amy Liu logo">
+          </div>
+
+          <!-- Default selected (only for first load with no #hash) -->
+          <a class="selected" href="#home">Home</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </nav>
 
       </div>
     </div>
