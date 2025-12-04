@@ -2,50 +2,64 @@
 <html lang="en-CA">
   <head>
     <meta charset="UTF-8">
-    <title>Assignment 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amy Liu Portfolio</title>
+    <!-- Created by Amy Liu on 2025 Dec 3 -->
+
+    <!-- Consolidated Google Font imports for Inconsolata, Indie Flower, and Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <style>
+      /* Enables smooth scrolling when using jump links */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --color-primary: #244196;
+        --color-secondary: #D7A4C5;
+        --color-accent: #DE3783;
+        --color-light-bg: #E7D8C6;
+        --color-dark-bg: #EDE8E2;
+        --color-light-frame: #d3d3d3;
+      }
+
       body {
         margin: 0;
         font-family: "Inconsolata", monospace;
-        background-color: #ffffff;
-        display: flex;
-        /* Added for centering */
+        background-color: var(--color-light-frame);
         justify-content: center;
+        display: flex;
+        min-height: 100vh;
       }
 
+      /* Using max-width instead of fixed width for responsiveness */
       .frame {
-        width: 1440px;
-        /* margin: 0 auto; Removed as flex handles it */
-        background-color: #d3d3d3;
-        padding: 120px 0;
+        width: 100%;
+        max-width: 1440px;
+        background-color: var(--color-light-frame);
+        padding: 60px 0;
       }
 
       .content-wrapper {
-        width: 1200px;
+        width: 95%;
+        max-width: 1200px;
         padding: 0;
         margin: 0 auto;
-        /* Centered content wrapper */
         background-color: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
       }
 
       .header-banner {
         text-align: center;
-        /* Centers the banner image */
         padding: 2em 0;
       }
 
       .header-banner img {
         width: 90%;
-        /* Adjusted width */
         height: auto;
-        /* margin-left: 8em; Removed bad margin */
       }
 
       /* ─────────────── NAVIGATION ─────────────── */
@@ -53,84 +67,88 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        /* Centered nav items */
-        background-color: #e7d8c6;
-        padding: 15px 30px;
-        /* Adjusted padding */
+        background-color: var(--color-light-bg);
+        padding: 20px 30px;
         gap: 40px;
+        flex-wrap: nowrap;
       }
 
       nav a {
         text-decoration: none;
         font-weight: 600;
-        font-size: 35px;
-        /* Adjusted size */
-        color: #D7A4C5;
+        font-size: 30px;
+        color: var(--color-secondary);
+        margin: 8px 15px;
+        transition: color 0.3s;
+        white-space: nowrap;
       }
 
-      /* REQUIRED CSS LINK STATES */
       nav a:hover {
-        color: #DE3783;
-        /* Highlight on hover */
+        color: var(--color-accent);
       }
 
       nav a:visited {
         color: #C39CB9;
-        /* Slight difference for visited links */
       }
 
-      /* End Link States */
-
       nav a.selected {
-        color: #DE3783;
+        color: var(--color-accent);
         display: inline-block;
         text-decoration: underline;
         text-decoration-thickness: 8px;
         text-underline-offset: 10px;
       }
 
+      .logo {
+        width: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+      }
+
       .logo img {
-        height: 80px;
-        /* Adjusted size */
+        height: 120px;
+        /* Fixed logo size */
         width: auto;
-        margin-right: 20px;
+        display: block;
       }
 
       /* ─────────────── ABOUT ME SECTION ─────────────── */
+      .section-padding {
+        padding: 4em 80px;
+      }
+
       .about-container {
         display: grid;
-        grid-template-columns: 35% 60%;
-        /* Adjusted ratio */
+        grid-template-columns: 40% 60%;
         gap: 5%;
-        /* Adjusted gap */
-        background-color: #244196;
+        background-color: var(--color-primary);
         color: white;
-        padding: 4em 80px;
-        /* Adjusted padding */
-        align-items: center;
+        align-items: flex-start;
+        /* Fixes vertical alignment */
       }
 
       .left-column img {
         width: 100%;
         height: auto;
-        border: 3px solid #D7A4C5;
-        /* Added border */
-        /* Removed old margins */
+        border: 3px solid var(--color-secondary);
+        /* FIX: Removed problematic margin-top: 8em from the original code */
+        margin-top: 0;
+        margin-bottom: 25px;
+        display: block;
       }
 
       .contact-box {
-        font-size: 18px;
-        /* Adjusted size */
-        line-height: 1.5;
-        /* Adjusted line-height */
-        margin-top: 1.5em;
-        /* Removed old margins */
+        font-size: 22px;
+        line-height: 1.6;
+        margin-top: 0;
       }
 
-      /* Style links in contact box */
       .contact-box a {
         color: white;
         text-decoration: none;
+        transition: text-decoration 0.3s;
       }
 
       .contact-box a:hover {
@@ -140,52 +158,56 @@
       .right-column h1 {
         font-family: "Indie Flower", cursive;
         font-size: 60px;
-        color: #D7A4C5;
+        color: var(--color-secondary);
+        /* FIX: Removed bad margins from the original code */
         margin: 0 0 0.5em 0;
-        /* Cleaned up margins */
         text-transform: uppercase;
-        text-align: right;
-        /* Right align title */
       }
 
       .right-column p {
         font-family: "Inconsolata", monospace;
-        font-size: 22px;
-        /* Adjusted size */
-        line-height: 1.5;
-        /* Adjusted line-height */
-        margin-bottom: 1.5em;
-        /* Removed old margins */
+        font-size: 24px;
+        line-height: 1.6;
+        /* FIX: Removed bad margins from the original code */
+        margin: 0 0 1.5em 0;
+      }
+
+      /* Placeholder section styles */
+      #education {
+        background-color: white;
+      }
+
+      #skills {
+        background-color: var(--color-dark-bg);
+      }
+
+      .section-title {
+        font-family: 'Indie Flower', cursive;
+        color: var(--color-primary);
+        font-size: 60px;
+        margin: 0 0 0.8em 0;
+      }
+
+      .section-content {
+        font-family: 'Inconsolata', monospace;
+        font-size: 23px;
+        line-height: 1.6;
       }
 
       /* ─────────────── PROJECTS ─────────────── */
       .projects {
-        background-color: #EDE8E2;
-        padding: 4em 80px;
-        /* Adjusted padding */
-      }
-
-      .projects h2 {
-        font-family: "Indie Flower", cursive;
-        color: #244196;
-        font-size: 60px;
-        text-transform: uppercase;
-        margin: 0 0 1.5em 0;
-        /* Adjusted margin */
+        background-color: var(--color-dark-bg);
       }
 
       .project-row {
         display: flex;
         justify-content: space-between;
         gap: 30px;
-        /* Adjusted gap */
         padding: 0;
-        /* Removed old padding */
       }
 
       .project-card {
         width: 31%;
-        /* Adjusted width */
         text-align: center;
       }
 
@@ -201,40 +223,31 @@
         object-fit: cover;
         border-radius: 18px;
         display: block;
-        /* Added for square shape */
-        aspect-ratio: 1 / 1;
       }
 
       .project-name {
         display: inline-block;
         margin-top: 20px;
-        /* Adjusted margin */
         padding: 12px 30px;
-        /* Adjusted padding/size */
         border-radius: 50px;
-        /* Pill shape */
-        background-color: #244196;
+        background-color: var(--color-primary);
         color: white;
         font-weight: 600;
-        /* Adjusted weight */
+        /* Fixed unit to value */
         font-size: 18px;
-        /* Adjusted size */
         font-family: "Roboto", sans-serif;
-        /* Adjusted font */
       }
 
       /* ─────────────── FOOTER ─────────────── */
       footer {
         text-align: center;
         padding: 3em 0;
-        /* Adjusted padding */
         background-color: #E6D9C7;
-        color: #244196;
       }
 
       .footer-name {
         font-family: "Inconsolata", monospace;
-        color: #244196;
+        color: var(--color-primary);
         font-size: 55px;
         margin: 0;
         line-height: 1;
@@ -244,18 +257,96 @@
       .footer-copyright {
         margin: 1em 0 0 0;
         font-size: 18px;
-        color: #244196;
-        font-weight: bold;
+        color: var(--color-primary);
       }
 
-      /* Style footer external link */
       .footer-copyright a {
-        color: #244196;
+        color: var(--color-primary);
         text-decoration: none;
+        transition: text-decoration 0.3s;
       }
 
       .footer-copyright a:hover {
         text-decoration: underline;
+      }
+
+      /* =======================================================
+         MOBILE RESPONSIVENESS
+         ======================================================= */
+      @media (max-width: 768px) {
+
+        .frame {
+          padding: 30px 0;
+        }
+
+        .section-padding {
+          padding: 2em 20px;
+        }
+
+        .header-banner {
+          padding: 1em 0;
+        }
+
+        /* Nav Bar: Stack links and reduce font size */
+        nav {
+          flex-direction: column;
+          gap: 15px;
+          padding: 15px 10px;
+        }
+
+        .logo {
+          width: 80px;
+          margin-right: 0;
+        }
+
+        .logo img {
+          height: 80px;
+        }
+
+        nav a {
+          font-size: 20px;
+          margin: 0 10px;
+        }
+
+        /* About Section: Stack the columns */
+        .about-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .right-column h1,
+        .projects h2,
+        .section-title {
+          font-size: 40px;
+          margin: 0 0 0.5em 0;
+          text-align: center;
+        }
+
+        .right-column p {
+          font-size: 18px;
+        }
+
+        /* Projects: Stack cards vertically */
+        .project-row {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .project-card {
+          width: 100%;
+        }
+
+        .project-frame img {
+          height: 200px;
+        }
+
+        .footer-name {
+          font-size: 30px;
+        }
+
+        .footer-copyright {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -265,22 +356,26 @@
 
       <div class="content-wrapper">
 
+        <!-- HEADER -->
         <div class="header-banner">
           <img src="Banner.jpg" alt="I designed this banner using procreate" width="1080" height="300">
         </div>
 
+        <!-- NAV: Links now use the IDs of the sections below -->
         <nav>
           <div class="logo">
-            <img src="Logo.PNG" alt="My logo" width="80" height="80">
+            <img src="Logo.PNG" alt="My logo" width="120" height="120">
           </div>
 
+          <!-- Jump Links -->
           <a href="#about" class="selected"><strong>Home</strong></a>
           <a href="#education">Education</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
         </nav>
 
-        <div id="about" class="about-container">
+        <!-- ABOUT ME (Home) Section -->
+        <div id="about" class="about-container section-padding">
           <div class="left-column">
             <img src="Profile.jpg" alt="My profile photo" width="400" height="600">
             <div class="contact-box">
@@ -300,14 +395,21 @@
           </div>
         </div>
 
-        <div id="skills" style="padding: 4em 80px; background-color: white;">
-          <h2 style="font-family: 'Indie Flower', cursive; color: #244196; font-size: 60px; margin: 0 0 0.8em 0;">Skills Summary</h2>
-          <p style="font-family: 'Inconsolata', monospace; font-size: 22px; line-height: 1.5; ">My key skills include UI/UX design, visual branding, and proficiency in tools like Figma, Adobe Creative Suite, and front-end development (HTML/CSS).</p>
+        <!-- EDUCATION Section -->
+        <div id="education" class="section-padding">
+          <h2 class="section-title">Education & Background</h2>
+          <p class="section-content">(Content placeholder for academic and work history.)</p>
         </div>
 
+        <!-- SKILLS Section -->
+        <div id="skills" class="section-padding">
+          <h2 class="section-title">Skills Summary</h2>
+          <p class="section-content">(Content placeholder for design tools, programming, and soft skills.)</p>
+        </div>
 
-        <div id="projects" class="projects">
-          <h2>Project Overview</h2>
+        <!-- PROJECT Section -->
+        <div id="projects" class="projects section-padding">
+          <h2 class="section-title">Project Overview</h2>
 
           <div class="project-row">
             <div class="project-card">
@@ -333,6 +435,7 @@
           </div>
         </div>
 
+        <!-- FOOTER -->
         <footer>
           <h2 class="footer-name">Amy Liu</h2>
           <p class="footer-copyright">
