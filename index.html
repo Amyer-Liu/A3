@@ -234,6 +234,232 @@
         font-size: 25px;
       }
 
+      /* =========================
+   EDUCATION SECTION (NEW)
+   ========================= */
+
+      /* override your earlier #education padding/min-height */
+      #education {
+        padding: 0;
+        /* we control spacing inside blocks */
+        min-height: auto;
+        background: none;
+        /* blocks inside have their own backgrounds */
+      }
+
+      /* BIG headings like the screenshot */
+      .edu-heading {
+        font-family: "Indie Flower", cursive;
+        font-size: 56px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0 0 22px 0;
+        color: white;
+      }
+
+      /* ---------- TOP BLUE PANEL ---------- */
+      .edu-top {
+        background-color: #244196;
+        color: white;
+        padding: 70px 80px;
+      }
+
+      .edu-top-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr;
+        /* left = education, right = software */
+        gap: 90px;
+        align-items: start;
+      }
+
+      /* timeline item layout (education + experience) */
+      .timeline-item {
+        margin-bottom: 34px;
+      }
+
+      .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 10px;
+      }
+
+      .meta-star {
+        color: #DE3783;
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .meta-pill {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        font-size: 16px;
+      }
+
+      .timeline-title {
+        margin: 0 0 6px 0;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .timeline-sub {
+        margin: 0;
+        font-size: 15px;
+        opacity: 0.9;
+      }
+
+      /* ---------- SOFTWARE (right column) ---------- */
+      .software-list {
+        margin-top: 6px;
+      }
+
+      .software-item {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 18px;
+        align-items: center;
+        margin: 18px 0;
+      }
+
+      .software-badge {
+        width: 54px;
+        height: 44px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+
+      /* stars */
+      .stars {
+        font-size: 22px;
+        letter-spacing: 6px;
+        line-height: 1;
+      }
+
+      .star-on {
+        color: #DE3783;
+      }
+
+      .star-off {
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      /* ---------- EXPERIENCE (still in top blue panel) ---------- */
+      .edu-exp {
+        margin-top: 36px;
+      }
+
+      .exp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+      }
+
+      /* ---------- MIDDLE BEIGE PANEL (Extracurriculars) ---------- */
+      .edu-extras {
+        background-color: #E6D9C7;
+        color: #244196;
+        padding: 60px 80px 70px 80px;
+        text-align: center;
+      }
+
+      .extras-title {
+        font-family: "Indie Flower", cursive;
+        font-size: 48px;
+        margin: 10px 0 24px 0;
+      }
+
+      .extras-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 22px;
+        flex-wrap: wrap;
+        /* in case screen is smaller */
+      }
+
+      .extra-item {
+        width: 150px;
+        text-align: center;
+      }
+
+      .extra-icon {
+        height: 60px;
+        margin-bottom: 10px;
+        /* Image goes here later */
+      }
+
+      .extra-label {
+        margin: 0;
+        color: #DE3783;
+        font-weight: 700;
+        font-size: 15px;
+      }
+
+      /* ---------- BOTTOM BLUE PANEL (Languages + School Involvement) ---------- */
+      .edu-bottom {
+        background-color: #244196;
+        color: white;
+        padding: 70px 80px;
+      }
+
+      .bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+        align-items: start;
+      }
+
+      /* Languages rows */
+      .lang-list {
+        margin-top: 10px;
+      }
+
+      .lang-item {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 22px;
+        align-items: center;
+        margin: 24px 0;
+      }
+
+      .lang-name {
+        font-size: 42px;
+        font-weight: 800;
+      }
+
+      .lang-level {
+        font-size: 18px;
+        opacity: 0.9;
+      }
+
+      /* School involvement card */
+      .involve-card {
+        margin-top: 12px;
+        background-color: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 16px;
+        padding: 26px 26px;
+      }
+
+      .involve-card ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .involve-card li {
+        margin: 14px 0;
+        color: #DE3783;
+        font-weight: 700;
+      }
+
       /* ─────────────── FOOTER ─────────────── */
       footer {
         text-align: center;
@@ -329,9 +555,240 @@
 
         <!-- EDUCATION -->
         <div id="education">
-          <h2>Education</h2>
-          <p>Text-holder: I will add my education content here later.</p>
+
+          <!-- ================= TOP BLUE PANEL ================= -->
+          <div class="edu-top">
+
+            <div class="edu-top-grid">
+              <!-- LEFT: EDUCATION -->
+              <div>
+                <h2 class="edu-heading">Education</h2>
+
+                <div class="timeline-item">
+                  <div class="meta-row">
+                    <span class="meta-star">★</span>
+                    <span class="meta-pill">2020 - 2024</span>
+                  </div>
+                  <h3 class="timeline-title">Unionville High School</h3>
+                  <p class="timeline-sub">High School Diploma</p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="meta-row">
+                    <span class="meta-star">★</span>
+                    <span class="meta-pill">2024 - 2029</span>
+                  </div>
+                  <h3 class="timeline-title">University of Waterloo</h3>
+                  <p class="timeline-sub">
+                    Bachelor's in Global Business and Digital Arts, with a minor in International Trade
+                  </p>
+                </div>
+              </div>
+
+              <!-- RIGHT: SOFTWARE -->
+              <div>
+                <h2 class="edu-heading">Software</h2>
+
+                <div class="software-list">
+                  <div class="software-item">
+                    <div class="software-badge">Ai</div>
+                    <div class="stars">
+                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span>
+                    </div>
+                  </div>
+
+                  <div class="software-item">
+                    <div class="software-badge">Ps</div>
+                    <div class="stars">
+                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span>
+                    </div>
+                  </div>
+
+                  <div class="software-item">
+                    <div class="software-badge">Id</div>
+                    <div class="stars">
+                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span><span class="star-off">★</span>
+                    </div>
+                  </div>
+
+                  <div class="software-item">
+                    <div class="software-badge">F</div>
+                    <div class="stars">
+                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span>
+                    </div>
+                  </div>
+
+                  <div class="software-item">
+                    <div class="software-badge">Pr</div>
+                    <div class="stars">
+                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span><span class="star-off">★</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- EXPERIENCE -->
+            <div class="edu-exp">
+              <h2 class="edu-heading">Experience</h2>
+
+              <div class="exp-grid">
+                <!-- LEFT COLUMN -->
+                <div>
+                  <div class="timeline-item">
+                    <div class="meta-row">
+                      <span class="meta-star">★</span>
+                      <span class="meta-pill">2021 - 2022</span>
+                    </div>
+                    <h3 class="timeline-title">Global Dental Centre</h3>
+                    <p class="timeline-sub">Administrative Assistant</p>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="meta-row">
+                      <span class="meta-star">★</span>
+                      <span class="meta-pill">2022 - 2022</span>
+                    </div>
+                    <h3 class="timeline-title">Eggette Hut</h3>
+                    <p class="timeline-sub">Sales Cashier</p>
+                  </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div>
+                  <div class="timeline-item">
+                    <div class="meta-row">
+                      <span class="meta-star">★</span>
+                      <span class="meta-pill">2023 - 2024</span>
+                    </div>
+                    <h3 class="timeline-title">M.Dance Studio</h3>
+                    <p class="timeline-sub">Dance Instructor</p>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="meta-row">
+                      <span class="meta-star">★</span>
+                      <span class="meta-pill">2025 - 2025</span>
+                    </div>
+                    <h3 class="timeline-title">3Dz Dance Studio</h3>
+                    <p class="timeline-sub">Dance Instructor</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Optional: decorative line art on bottom-right -->
+            <!-- TODO: Put your pink decorative image here (position it absolute if you want) -->
+
+          </div>
+          <!-- ================= END TOP BLUE PANEL ================= -->
+
+
+          <!-- ================= MIDDLE BEIGE PANEL ================= -->
+          <div class="edu-extras">
+            <!-- Optional: decorative divider icons -->
+            <!-- TODO: Put your small blue doodle divider image here -->
+
+            <h2 class="extras-title">Extracurriculars</h2>
+
+            <div class="extras-row">
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <!-- TODO: Drawing icon image -->
+                </div>
+                <p class="extra-label">Drawing</p>
+              </div>
+
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <!-- TODO: Singing icon image -->
+                </div>
+                <p class="extra-label">Singing</p>
+              </div>
+
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <!-- TODO: Dancing icon image -->
+                </div>
+                <p class="extra-label">Dancing</p>
+              </div>
+
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <!-- TODO: Watching movies icon image -->
+                </div>
+                <p class="extra-label">Watching movies</p>
+              </div>
+
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <!-- TODO: Swimming icon image -->
+                </div>
+                <p class="extra-label">Swimming</p>
+              </div>
+
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <!-- TODO: Playing tennis icon image -->
+                </div>
+                <p class="extra-label">Playing tennis</p>
+              </div>
+            </div>
+          </div>
+          <!-- ================= END MIDDLE BEIGE PANEL ================= -->
+
+
+          <!-- ================= BOTTOM BLUE PANEL ================= -->
+          <div class="edu-bottom">
+            <div class="bottom-grid">
+
+              <!-- LEFT: LANGUAGES -->
+              <div>
+                <h2 class="edu-heading">Languages</h2>
+
+                <div class="lang-list">
+                  <div class="lang-item">
+                    <div class="lang-name">中文</div>
+                    <div class="lang-level">Fluent</div>
+                  </div>
+
+                  <div class="lang-item">
+                    <div class="lang-name">English</div>
+                    <div class="lang-level">Fluent</div>
+                  </div>
+
+                  <div class="lang-item">
+                    <div class="lang-name">안녕</div>
+                    <div class="lang-level">Beginner</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT: SCHOOL INVOLVEMENT -->
+              <div>
+                <h2 class="edu-heading">School Involvement</h2>
+
+                <!-- Optional: open book illustration -->
+                <!-- TODO: Put your open-book pink illustration image here -->
+
+                <div class="involve-card">
+                  <ul>
+                    <li>Fashion for Change</li>
+                    <li>Haebeat Dance Crew</li>
+                    <li>Chinese Christian Fellowship</li>
+                  </ul>
+                </div>
+
+                <!-- Optional: music notes / plus signs decoration -->
+                <!-- TODO: Put your small pink music/plus icons here -->
+              </div>
+
+            </div>
+          </div>
+          <!-- ================= END BOTTOM BLUE PANEL ================= -->
+
         </div>
+
 
         <!-- SKILLS -->
         <div id="skills">
