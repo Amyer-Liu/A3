@@ -238,16 +238,220 @@
    EDUCATION SECTION (NEW)
    ========================= */
 
-      /* override your earlier #education padding/min-height */
-      #education {
-        padding: 0;
-        /* we control spacing inside blocks */
-        min-height: auto;
-        background: none;
-        /* blocks inside have their own backgrounds */
+      >body {
+        margin: 0;
+        font-family: "Inconsolata", monospace;
+        background-color: #ffffff;
+        justify-content: center;
+        display: flex;
       }
 
-      /* BIG headings like the screenshot */
+      .frame {
+        width: 1440px;
+        background-color: #d3d3d3;
+        padding: 120px 0;
+      }
+
+      .content-wrapper {
+        width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        padding-top: 50px;
+      }
+
+      .header-banner {
+        text-align: center;
+        padding: 0 0 2.5em 0;
+      }
+
+      .header-banner img {
+        width: 90%;
+        height: auto;
+      }
+
+      /* ─────────────── NAVIGATION ─────────────── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e7d8c6;
+        padding: 20px 30px;
+        gap: 40px;
+        position: sticky;
+        top: 0;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 40px;
+        color: #D7A4C5;
+        margin: 8px 20px;
+      }
+
+      nav a:visited {
+        color: #C39CB9;
+      }
+
+      nav a:hover {
+        color: #DE3783;
+      }
+
+      nav a:active,
+      nav a:focus {
+        color: #DE3783;
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-thickness: 8px;
+        text-underline-offset: 10px;
+        outline: none;
+      }
+
+      .logo {
+        width: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+      }
+
+      .logo img {
+        height: 120px;
+        width: auto;
+        display: block;
+      }
+
+      /* ─────────────── ID Links ─────────────── */
+      #home,
+      #education,
+      #skills,
+      #projects {
+        min-height: 700px;
+        padding: 60px 80px;
+        box-sizing: border-box;
+      }
+
+      #home {
+        background-color: #244196;
+        color: white;
+        padding: 0;
+      }
+
+      #education,
+      #skills,
+      #projects {
+        background-color: #EDE8E2;
+        color: #244196;
+      }
+
+      /* ─────────────── HOME:ABOUT ME SECTION ─────────────── */
+      .about-container {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: 5%;
+        background-color: #244196;
+        color: white;
+        padding: 4em 80px;
+        align-items: flex-start;
+      }
+
+      .left-column img {
+        width: 100%;
+        height: auto;
+        border: 3px solid #D7A4C5;
+        margin-top: 8em;
+        margin-bottom: 35px;
+        display: block;
+      }
+
+      .contact-box {
+        background-color: #E6D9C7;
+        color: #244196;
+        padding: 0.4em 1em;
+        border-radius: 40px;
+        display: inline-block;
+        margin-top: 0.6em;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .right-column h1 {
+        font-family: "Indie Flower", cursive;
+        font-size: 60px;
+        color: #D7A4C5;
+        margin-left: 2.5em;
+        margin-bottom: 1.4em;
+        margin-top: 0.3em;
+        text-transform: uppercase;
+      }
+
+      .right-column p {
+        font-family: "Inconsolata", monospace;
+        font-size: 25.5px;
+        line-height: 1.6;
+        margin: 0 0 4em 0;
+        margin-top: -2.9em;
+        margin-right: 1.5em;
+      }
+
+      /* ─────────────── HOME:PROJECTS SECTION─────────────── */
+      .projects {
+        background-color: #EDE8E2;
+        padding: 4em 90px;
+      }
+
+      .projects h2 {
+        font-family: "Indie Flower", cursive;
+        color: #244196;
+        font-size: 60px;
+        text-transform: uppercase;
+        margin: -0.4em 0 0.4em -0.3em;
+      }
+
+      .project-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 4.5em;
+        padding: 0;
+      }
+
+      .project-card {
+        width: 30%;
+        text-align: center;
+      }
+
+      .project-frame {
+        background-color: #E6D9C7;
+        padding: 1.1em;
+        border-radius: 22px;
+      }
+
+      .project-frame img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 18px;
+        display: block;
+      }
+
+      .project-name {
+        display: inline-block;
+        margin-top: 1em;
+        padding: 0.6em 1.4em;
+        border-radius: 60px;
+        background-color: #244196;
+        color: white;
+        font-weight: 200px;
+        font-size: 25px;
+      }
+
+      /* ─────────────── EDUCATION─────────────── */
+      #education {
+        padding: 0;
+        min-height: auto;
+        background: none;
+      }
+
       .edu-heading {
         font-family: "Indie Flower", cursive;
         font-size: 56px;
@@ -257,7 +461,6 @@
         color: white;
       }
 
-      /* ---------- TOP BLUE PANEL ---------- */
       .edu-top {
         background-color: #244196;
         color: white;
@@ -266,13 +469,11 @@
 
       .edu-top-grid {
         display: grid;
-        grid-template-columns: 1.2fr 0.9fr;
-        /* left = education, right = software */
+        grid-template-columns: 50% 50%;
         gap: 90px;
         align-items: start;
       }
 
-      /* timeline item layout (education + experience) */
       .timeline-item {
         margin-bottom: 34px;
       }
@@ -294,8 +495,7 @@
         display: inline-block;
         padding: 6px 12px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.18);
-        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: #5580B5;
         font-size: 16px;
       }
 
@@ -308,10 +508,8 @@
       .timeline-sub {
         margin: 0;
         font-size: 15px;
-        opacity: 0.9;
       }
 
-      /* ---------- SOFTWARE (right column) ---------- */
       .software-list {
         margin-top: 6px;
       }
@@ -319,11 +517,13 @@
       .software-item {
         display: grid;
         grid-template-columns: 54px 1fr;
+        /* badge + stars */
         gap: 18px;
         align-items: center;
         margin: 18px 0;
       }
 
+      /* ✅ SOFTWARE BADGE: NOW AN IMAGE */
       .software-badge {
         width: 54px;
         height: 44px;
@@ -333,11 +533,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 800;
-        letter-spacing: 0.5px;
       }
 
-      /* stars */
+      .software-badge img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        display: block;
+      }
+
       .stars {
         font-size: 22px;
         letter-spacing: 6px;
@@ -348,11 +552,11 @@
         color: #DE3783;
       }
 
+      /* ✅ OFF STARS: FADED (simple + works) */
       .star-off {
-        color: rgba(255, 255, 255, 0.35);
+        color: rgba(222, 55, 131, 0.25);
       }
 
-      /* ---------- EXPERIENCE (still in top blue panel) ---------- */
       .edu-exp {
         margin-top: 36px;
       }
@@ -363,7 +567,6 @@
         gap: 90px;
       }
 
-      /* ---------- MIDDLE BEIGE PANEL (Extracurriculars) ---------- */
       .edu-extras {
         background-color: #E6D9C7;
         color: #244196;
@@ -391,9 +594,19 @@
       }
 
       .extra-icon {
-        height: 60px;
+        height: 70px;
         margin-bottom: 10px;
-        /* Image goes here later */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ✅ EXTRACURRICULAR ICON: NOW AN IMAGE */
+      .extra-icon img {
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
+        display: block;
       }
 
       .extra-label {
@@ -403,7 +616,6 @@
         font-size: 15px;
       }
 
-      /* ---------- BOTTOM BLUE PANEL (Languages + School Involvement) ---------- */
       .edu-bottom {
         background-color: #244196;
         color: white;
@@ -417,7 +629,6 @@
         align-items: start;
       }
 
-      /* Languages rows */
       .lang-list {
         margin-top: 10px;
       }
@@ -440,11 +651,9 @@
         opacity: 0.9;
       }
 
-      /* School involvement card */
       .involve-card {
         margin-top: 12px;
-        background-color: rgba(255, 255, 255, 0.18);
-        border: 1px solid rgba(255, 255, 255, 0.22);
+        background-color: #9DC1D9;
         border-radius: 16px;
         padding: 26px 26px;
       }
@@ -459,6 +668,7 @@
         color: #DE3783;
         font-weight: 700;
       }
+
 
       /* ─────────────── FOOTER ─────────────── */
       footer {
