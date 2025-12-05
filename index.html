@@ -3,16 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Assignment 3</title>
-    <!-- Created by Amy Liu on 2025 Dec 3 -->
-
-    <!-- Google Font 1 - Indie Flower-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
-    <!-- Google Font 1 - Inconsolata-->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900;1,200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900;1,200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
 
     <style>
       body {
@@ -320,7 +316,8 @@
         display: block;
       }
 
-      #education .stars {
+      /* START: SIMPLIFIED STAR RATING */
+      #education .software-item .stars-rating {
         justify-self: start;
         font-size: 60px;
         letter-spacing: 25px;
@@ -329,9 +326,12 @@
         color: #DE3783;
       }
 
-      #education .star-off {
-        color: #5580B5;
+      /* Injects 5 stars to replace the spans */
+      #education .software-item .stars-rating::after {
+        content: "★★★★★";
       }
+
+      /* END: SIMPLIFIED STAR RATING */
 
       #education .edu-exp {
         margin-top: 44px;
@@ -406,15 +406,65 @@
         align-items: start;
       }
 
+      /* START: Languages */
       #education .lang-item {
+        display: grid;
         grid-template-columns: 150px 1fr;
         margin: 28px 0;
       }
 
       #education .lang-name {
-        font-size: 46px;
+        font-size: 60px;
         font-weight: 900;
+        line-height: 1;
       }
+
+      #education .lang-level {
+        font-size: 40px;
+        font-weight: 400;
+        align-self: end;
+        padding-bottom: 0.1em;
+      }
+
+      /* END: Languages */
+
+      /* START: School Involvement FIXES */
+      #education .involve-card {
+        background-color: #8c98cc;
+        padding: 30px 40px 30px 60px;
+        border-radius: 15px;
+        /* FIX: Increased negative margin to pull the card up significantly over the beige section */
+        margin-top: -160px;
+        position: relative;
+        z-index: 10;
+      }
+
+      #education .involve-card ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      #education .involve-card li {
+        color: #DE3783;
+        font-size: 30px;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 1.2em;
+      }
+
+      /* Custom list item bullet point */
+      #education .involve-card li::before {
+        content: "•";
+        color: #DE3783;
+        font-size: 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 1.2;
+      }
+
+      /* END: School Involvement FIXES */
 
       /* ─────────────── FOOTER ─────────────── */
       footer {
@@ -444,12 +494,10 @@
     <div class="frame">
       <div class="content-wrapper">
 
-        <!-- HEADER -->
         <div class="header-banner">
           <img src="Banner.jpg" width="1080" height="360" alt="Portfolio banner designed in Procreate">
         </div>
 
-        <!-- NAV -->
         <nav>
           <div class="logo">
             <img src="Logo.PNG" width="120" height="120" alt="Amy Liu logo">
@@ -460,13 +508,12 @@
           <a href="#projects">Projects</a>
         </nav>
 
-        <!-- HOME:ABOUT ME -->
         <div id="home">
           <div class="about-container">
             <div class="left-column">
               <img src="Profile.jpg" width="480" height="640" alt="Profile photo of myself">
               <div class="contact-box">
-                <p><strong>Email:</strong> <a href="mailto:a383liu@uwaterloo.ca">a383liu@uwaterloo.ca</a></p>
+                <p><strong>Email:</strong> <a href="mailto:a383liu@uwaterloo.ca">a383liu@uwaterolo.ca</a></p>
                 <p><strong>Phone:</strong> 6477690826</p>
               </div>
             </div>
@@ -481,7 +528,6 @@
                 the world, then weaving those insights into inclusive, thoughtful digital experiences.</p>
             </div>
           </div>
-          <!-- HOME:PROJECT SECTION -->
           <div class="projects">
             <h2>Project Overview</h2>
             <div class="project-row">
@@ -507,14 +553,10 @@
           </div>
         </div>
 
-        <!-- EDUCATION -->
         <div id="education">
 
-          <!-- ================= TOP BLUE PANEL ================= -->
           <div class="edu-top">
-
             <div class="edu-top-grid">
-              <!-- LEFT: EDUCATION -->
               <div>
                 <h2 class="edu-heading">Education</h2>
 
@@ -532,14 +574,13 @@
                     <span class="meta-star">★</span>
                     <span class="meta-pill">2024 - 2029</span>
                   </div>
-                  <h3 class="timeline-title">University of Waterloo</h3>
+                  <h3 class="timeline-title">University of Waterloo </h3>
                   <p class="timeline-sub">
                     Bachelor's in Global Business and Digital Arts, with a minor in International Trade
                   </p>
                 </div>
               </div>
 
-              <!-- RIGHT: SOFTWARE (IMAGES) -->
               <div>
                 <h2 class="edu-heading">Software</h2>
 
@@ -548,56 +589,44 @@
                     <div class="software-badge">
                       <img src="ai.png" alt="Adobe Illustrator">
                     </div>
-                    <div class="stars">
-                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span>
-                    </div>
+                    <div class="stars-rating" data-rating="3"></div>
                   </div>
 
                   <div class="software-item">
                     <div class="software-badge">
                       <img src="ps.png" alt="Adobe Photoshop">
                     </div>
-                    <div class="stars">
-                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span>
-                    </div>
+                    <div class="stars-rating" data-rating="4"></div>
                   </div>
 
                   <div class="software-item">
                     <div class="software-badge">
                       <img src="id.png" alt="Adobe InDesign">
                     </div>
-                    <div class="stars">
-                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span><span class="star-off">★</span>
-                    </div>
+                    <div class="stars-rating" data-rating="2"></div>
                   </div>
 
                   <div class="software-item">
                     <div class="software-badge">
                       <img src="figma.png" alt="Figma">
                     </div>
-                    <div class="stars">
-                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span>
-                    </div>
+                    <div class="stars-rating" data-rating="3"></div>
                   </div>
 
                   <div class="software-item">
                     <div class="software-badge">
                       <img src="pr.png" alt="Adobe Premiere Pro">
                     </div>
-                    <div class="stars">
-                      <span class="star-on">★</span><span class="star-on">★</span><span class="star-off">★</span><span class="star-off">★</span><span class="star-off">★</span>
-                    </div>
+                    <div class="stars-rating" data-rating="2"></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- EXPERIENCE -->
             <div class="edu-exp">
               <h2 class="edu-heading">Experience</h2>
 
               <div class="exp-grid">
-                <!-- LEFT COLUMN -->
                 <div class="exp-col">
                   <div class="timeline-item">
                     <div class="meta-row">
@@ -618,7 +647,6 @@
                   </div>
                 </div>
 
-                <!-- RIGHT COLUMN -->
                 <div class="exp-col">
                   <div class="timeline-item">
                     <div class="meta-row">
@@ -640,123 +668,110 @@
                 </div>
               </div>
             </div>
-            <!-- ================= END TOP BLUE PANEL ================= -->
+          </div>
+          <div class="edu-extras">
+            <h2 class="extras-title">Extracurriculars</h2>
 
-
-            <!-- ================= MIDDLE BEIGE PANEL ================= -->
-            <div class="edu-extras">
-              <h2 class="extras-title">Extracurriculars</h2>
-
-              <div class="extras-row">
-                <div class="extra-item">
-                  <div class="extra-icon">
-                    <img src="drawing.png" alt="Drawing">
-                  </div>
-                  <p class="extra-label">Drawing</p>
+            <div class="extras-row">
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <img src="drawing.png" alt="Drawing">
                 </div>
+                <p class="extra-label">Drawing</p>
+              </div>
 
-                <div class="extra-item">
-                  <div class="extra-icon">
-                    <img src="singing.png" alt="Singing">
-                  </div>
-                  <p class="extra-label">Singing</p>
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <img src="singing.png" alt="Singing">
                 </div>
+                <p class="extra-label">Singing</p>
+              </div>
 
-                <div class="extra-item">
-                  <div class="extra-icon">
-                    <img src="dancing.png" alt="Dancing">
-                  </div>
-                  <p class="extra-label">Dancing</p>
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <img src="dancing.png" alt="Dancing">
                 </div>
+                <p class="extra-label">Dancing</p>
+              </div>
 
-                <div class="extra-item">
-                  <div class="extra-icon">
-                    <img src="laptop.png" alt="Watching movies">
-                  </div>
-                  <p class="extra-label">Watching movies</p>
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <img src="laptop.png" alt="Watching movies">
                 </div>
+                <p class="extra-label">Watching movies</p>
+              </div>
 
-                <div class="extra-item">
-                  <div class="extra-icon">
-                    <img src="swimming.png" alt="Swimming">
-                  </div>
-                  <p class="extra-label">Swimming</p>
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <img src="swimming.png" alt="Swimming">
                 </div>
+                <p class="extra-label">Swimming</p>
+              </div>
 
-                <div class="extra-item">
-                  <div class="extra-icon">
-                    <img src="tennis.png" alt="Playing tennis">
-                  </div>
-                  <p class="extra-label">Playing tennis</p>
+              <div class="extra-item">
+                <div class="extra-icon">
+                  <img src="tennis.png" alt="Playing tennis">
                 </div>
+                <p class="extra-label">Playing tennis</p>
               </div>
             </div>
-            <!-- ================= END MIDDLE BEIGE PANEL ================= -->
+          </div>
+          <div class="edu-bottom">
+            <div class="bottom-grid">
 
+              <div>
+                <h2 class="edu-heading">Languages</h2>
 
-            <!-- ================= BOTTOM BLUE PANEL ================= -->
-            <div class="edu-bottom">
-              <div class="bottom-grid">
+                <div class="lang-list">
+                  <div class="lang-item">
+                    <div class="lang-name">中文</div>
+                    <div class="lang-level">Fluent</div>
+                  </div>
 
-                <!-- LEFT: LANGUAGES -->
-                <div>
-                  <h2 class="edu-heading">Languages</h2>
+                  <div class="lang-item">
+                    <div class="lang-name">English</div>
+                    <div class="lang-level">Fluent</div>
+                  </div>
 
-                  <div class="lang-list">
-                    <div class="lang-item">
-                      <div class="lang-name">中文</div>
-                      <div class="lang-level">Fluent</div>
-                    </div>
-
-                    <div class="lang-item">
-                      <div class="lang-name">English</div>
-                      <div class="lang-level">Fluent</div>
-                    </div>
-
-                    <div class="lang-item">
-                      <div class="lang-name">안녕</div>
-                      <div class="lang-level">Beginner</div>
-                    </div>
+                  <div class="lang-item">
+                    <div class="lang-name">안녕</div>
+                    <div class="lang-level">Beginner</div>
                   </div>
                 </div>
+              </div>
 
-                <!-- RIGHT: SCHOOL INVOLVEMENT -->
-                <div>
-                  <h2 class="edu-heading">School Involvement</h2>
+              <div>
+                <h2 class="edu-heading">School Involvement</h2>
 
-                  <div class="involve-card">
-                    <ul>
-                      <li>Fashion for Change</li>
-                      <li>Haebeat Dance Crew</li>
-                      <li>Chinese Christian Fellowship</li>
-                    </ul>
-                  </div>
+                <div class="involve-card">
+                  <ul>
+                    <li>Fashion for Change</li>
+                    <li>Haebeat Dance Crew</li>
+                    <li>Chinese Christian Fellowship</li>
+                  </ul>
                 </div>
 
               </div>
+
             </div>
-            <!-- ================= END BOTTOM BLUE PANEL ================= -->
-
           </div>
-
-          <!-- SKILLS -->
-          <div id="skills">
-            <h2>Skills</h2>
-            <p>Text-holder: I will add my skills content here later.</p>
-          </div>
-
-          <!-- PROJECTS -->
-          <div id="projects">
-            <h2>Projects</h2>
-            <p>Text-holder: I will add my projects content here later.</p>
-          </div>
-
-          <!-- FOOTER -->
-          <footer>
-            <h2 class="footer-name">Amy Liu</h2>
-            <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
-          </footer>
         </div>
+
+        <div id="skills">
+          <h2>Skills</h2>
+          <p>Text-holder: I will add my skills content here later.</p>
+        </div>
+
+        <div id="projects">
+          <h2>Projects</h2>
+          <p>Text-holder: I will add my projects content here later.</p>
+        </div>
+
+        <footer>
+          <h2 class="footer-name">Amy Liu</h2>
+          <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
+        </footer>
       </div>
+    </div>
   </body>
 </html>
