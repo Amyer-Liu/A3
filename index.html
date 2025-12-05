@@ -5,240 +5,17 @@
     <title>Assignment 3</title>
     <!-- Created by Amy Liu on 2025 Dec 3 -->
 
-    <!-- Google Fonts (keep ONE copy) -->
+    <!-- Google Font 1 - Indie Flower-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Google Font 1 - Inconsolata-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
 
     <style>
       body {
-        margin: 0;
-        font-family: "Inconsolata", monospace;
-        background-color: #ffffff;
-        justify-content: center;
-        display: flex;
-      }
-
-      .frame {
-        width: 1440px;
-        background-color: #d3d3d3;
-        padding: 120px 0;
-      }
-
-      .content-wrapper {
-        width: 1200px;
-        margin: 0 auto;
-        background-color: white;
-        padding-top: 50px;
-      }
-
-      .header-banner {
-        text-align: center;
-        /* banner moved "up" (less space above and below) */
-        padding: 0 0 1.5em 0;
-      }
-
-      .header-banner img {
-        width: 90%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-
-      /* ─────────────── NAVIGATION ─────────────── */
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #e7d8c6;
-        padding: 20px 30px;
-        gap: 40px;
-
-        /* sticky */
-        position: sticky;
-        top: 0;
-
-        /* important so it stays above content when scrolling */
-        z-index: 1000;
-      }
-
-      nav a {
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 40px;
-        color: #D7A4C5;
-        margin: 8px 20px;
-      }
-
-      /* hover always pink */
-      nav a:hover {
-        color: #DE3783;
-      }
-
-      /* visited color (kept, but hover still overrides) */
-      nav a:visited {
-        color: #C39CB9;
-      }
-
-      nav a:visited:hover {
-        color: #DE3783;
-      }
-
-      /* underline while focused (CSS-only limitation: not permanent forever) */
-      nav a:focus,
-      nav a:active {
-        color: #DE3783;
-        font-weight: 800;
-        text-decoration: underline;
-        text-decoration-thickness: 8px;
-        text-underline-offset: 10px;
-        outline: none;
-      }
-
-      .logo {
-        width: 140px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 30px;
-      }
-
-      .logo img {
-        height: 120px;
-        width: auto;
-        display: block;
-      }
-
-      /* ─────────────── ID Links ─────────────── */
-      #home,
-      #education,
-      #skills,
-      #projects {
-        min-height: 700px;
-        padding: 60px 80px;
-        box-sizing: border-box;
-      }
-
-      #home {
-        background-color: #244196;
-        color: white;
-        padding: 0;
-        /* home has its own inner padding */
-      }
-
-      #education,
-      #skills,
-      #projects {
-        background-color: #EDE8E2;
-        color: #244196;
-      }
-
-      /* ─────────────── HOME:ABOUT ME SECTION ─────────────── */
-      .about-container {
-        display: grid;
-        grid-template-columns: 40% 60%;
-        gap: 5%;
-        background-color: #244196;
-        color: white;
-        padding: 4em 80px;
-        align-items: flex-start;
-      }
-
-      .left-column img {
-        width: 100%;
-        height: auto;
-        border: 3px solid #D7A4C5;
-        margin-top: 8em;
-        margin-bottom: 35px;
-        display: block;
-      }
-
-      .contact-box {
-        background-color: #E6D9C7;
-        color: #244196;
-        padding: 0.4em 1em;
-        border-radius: 40px;
-        display: inline-block;
-        margin-top: 0.6em;
-        font-size: 20px;
-        line-height: 1.1;
-      }
-
-      .right-column h1 {
-        font-family: "Indie Flower", cursive;
-        font-size: 60px;
-        color: #D7A4C5;
-        margin-left: 2.5em;
-        margin-bottom: 1.4em;
-        margin-top: 0.3em;
-        text-transform: uppercase;
-      }
-
-      .right-column p {
-        font-family: "Inconsolata", monospace;
-        font-size: 25.5px;
-        line-height: 1.6;
-        margin: 0 0 4em 0;
-        margin-top: -2.9em;
-        margin-right: 1.5em;
-      }
-
-      /* ─────────────── HOME:PROJECTS SECTION─────────────── */
-      .projects {
-        background-color: #EDE8E2;
-        padding: 4em 90px;
-      }
-
-      .projects h2 {
-        font-family: "Indie Flower", cursive;
-        color: #244196;
-        font-size: 60px;
-        text-transform: uppercase;
-        margin: -0.4em 0 0.4em -0.3em;
-      }
-
-      .project-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 4.5em;
-        padding: 0;
-      }
-
-      .project-card {
-        width: 30%;
-        text-align: center;
-      }
-
-      .project-frame {
-        background-color: #E6D9C7;
-        padding: 1.1em;
-        border-radius: 22px;
-      }
-
-      .project-frame img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 18px;
-        display: block;
-      }
-
-      .project-name {
-        display: inline-block;
-        margin-top: 1em;
-        padding: 0.6em 1.4em;
-        border-radius: 60px;
-        background-color: #244196;
-        color: white;
-        font-weight: 200px;
-        font-size: 25px;
-      }
-
-      /* =========================
-   EDUCATION SECTION (NEW)
-   ========================= */
-
-      >body {
         margin: 0;
         font-family: "Inconsolata", monospace;
         background-color: #ffffff;
@@ -446,225 +223,197 @@
       }
 
       /* ─────────────── EDUCATION─────────────── */
-       #education {
+      #education {
         padding: 0;
         min-height: auto;
         background: none;
       }
 
-      .edu-heading {
-        font-family: "Indie Flower", cursive;
-        font-size: 56px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin: 0 0 22px 0;
-        color: white;
-      }
-
-      /* Top blue panel (Education + Software + Experience) */
-      .edu-top {
+      #education .edu-top {
         background-color: #244196;
         color: white;
-        padding: 55px 80px 40px 80px;  /* slightly shorter like the reference */
+        padding: 90px 90px 70px;
       }
 
-      .edu-top-grid {
+      #education .edu-top-grid {
         display: grid;
-        grid-template-columns: 50% 50%;
-        gap: 80px;
-        align-items: flex-start;
+        grid-template-columns: 55% 45%;
+        gap: 64px;
+        align-items: start;
       }
 
-      .timeline-item {
-        margin-bottom: 28px;
-      }
-
-      .meta-row {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-bottom: 10px;
-      }
-
-      .meta-star {
-        color: #DE3783;
-        font-size: 22px;
+      #education .edu-heading {
+        font-family: "Indie Flower", cursive;
+        font-size: 72px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0 0 40px 0;
+        color: white;
         line-height: 1;
       }
 
-      .meta-pill {
+      #education .timeline-item {
+        margin-bottom: 60px;
+      }
+
+      #education .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 15px;
+      }
+
+      #education .meta-star {
+        color: #DE3783;
+        font-size: 60px;
+        line-height: 1;
+        margin-top: -0.2em;
+      }
+
+      #education .meta-pill {
         display: inline-block;
-        padding: 6px 16px;
+        padding: 10px 18px;
         border-radius: 999px;
         background: #5580B5;
-        font-size: 16px;
+        font-size: 30px;
       }
 
-      .timeline-title {
-        margin: 0 0 6px 0;
-        font-size: 24px;
-        font-weight: 700;
+      #education .timeline-title {
+        margin: 0 0 8px 0;
+        font-size: 35px;
+        font-weight: 500;
+        margin-left: 2em;
       }
 
-      .timeline-sub {
+      #education .timeline-sub {
         margin: 0;
-        font-size: 15px;
+        font-size: 30px;
+        line-height: 1.5;
+        max-width: 600px;
+        margin-left: 2.4em;
       }
 
-      .software-list {
-        margin-top: 10px;
-      }
-
-      /* Make Software column look like reference:
-         icon column auto, stars pushed to right */
-      .software-item {
+      #education .software-item {
         display: grid;
-        grid-template-columns: auto 1fr;
-        column-gap: 40px;
+        grid-template-columns: 60px 40px;
+        gap: 22px;
         align-items: center;
-        margin: 16px 0;
+        margin: 26px 0;
       }
 
-      .software-badge {
-        width: 54px;
-        height: 44px;
-        border-radius: 12px;
+      #education .software-badge {
+        width: 70px;
+        height: 70px;
+        border-radius: 15px;
         background: #5580B5;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 0.2em;
       }
 
-      .software-badge img {
-        width: 28px;
-        height: 28px;
-        object-fit: contain;
+      #education .software-badge img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
         display: block;
       }
 
-      .stars {
-        font-size: 22px;
-        letter-spacing: 6px;
+      #education .stars {
+        justify-self: start;
+        font-size: 60px;
+        letter-spacing: 25px;
         line-height: 1;
-        text-align: right;
-      }
-
-      .star-on {
+        margin-left: 0.1em;
         color: #DE3783;
       }
 
-      .star-off {
-        border: 1px solid #DE3783;
+      #education .star-off {
+        color: #5580B5;
       }
 
-      .edu-exp {
-        margin-top: 42px;
+      #education .edu-exp {
+        margin-top: 44px;
       }
 
-      .exp-grid {
+      #education .exp-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 48% 52%;
         gap: 80px;
+        align-items: start;
       }
 
-      /* Middle beige panel – shorter like poster */
-      .edu-extras {
+      #education .edu-extras {
         background-color: #E6D9C7;
         color: #244196;
-        padding: 35px 80px 50px 80px;
+        padding: 48px 90px 54px;
         text-align: center;
       }
 
-      .extras-title {
+      #education .extras-title {
         font-family: "Indie Flower", cursive;
-        font-size: 48px;
-        margin: 6px 0 18px 0;
+        font-size: 56px;
+        margin: 0 0 34px 0;
+        color: #244196;
       }
 
-      .extras-row {
+      #education .extras-row {
+        display: grid;
+        grid-template-columns: 150px 150px 150px 150px 150px 150px;
+        gap: 25px;
+        justify-items: center;
+        align-items: start;
+      }
+
+      #education .extra-item {
         display: flex;
-        justify-content: space-between;
-        gap: 22px;
-        margin-top: 26px;
-      }
-
-      .extra-item {
-        width: 130px;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
       }
 
-      .extra-icon {
-        height: 70px;
-        margin-bottom: 10px;
+      #education .extra-icon {
+        margin-bottom: 14px;
       }
 
-      .extra-icon img {
-        width: 65px;
-        height: 65px;
+      #education .extra-icon img {
+        width: 150px;
+        height: 150px;
         object-fit: contain;
         display: block;
-        margin: 0 auto;
       }
 
-      .extra-label {
+      #education .extra-label {
         margin: 0;
         color: #DE3783;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 30px;
+        line-height: 1.15;
+        max-width: 120px;
       }
 
-      /* Bottom blue panel – Languages + Involvement */
-      .edu-bottom {
+      #education .edu-bottom {
         background-color: #244196;
         color: white;
-        padding: 55px 80px 65px 80px;
+        padding: 76px 90px;
       }
 
-      .bottom-grid {
+      #education .bottom-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 110px;
-        align-items: flex-start;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 70px;
+        align-items: start;
       }
 
-      .lang-list {
-        margin-top: 32px;
+      #education .lang-item {
+        grid-template-columns: 150px 1fr;
+        margin: 28px 0;
       }
 
-      .lang-item {
-        display: grid;
-        grid-template-columns: 160px 1fr;
-        gap: 22px;
-        align-items: center;
-        margin: 22px 0;
-      }
-
-      .lang-name {
-        font-size: 56px;  /* bigger, like the reference */
-        font-weight: 800;
-      }
-
-      .lang-level {
-        font-size: 18px;
-        opacity: 0.9;
-      }
-
-      .involve-card {
-        margin-top: 32px;
-        background-color: #9DC1D9;
-        border-radius: 16px;
-        padding: 26px 26px;
-      }
-
-      .involve-card ul {
-        margin: 0;
-        padding-left: 20px;
-      }
-
-      .involve-card li {
-        margin: 14px 0;
-        color: #DE3783;
-        font-weight: 700;
+      #education .lang-name {
+        font-size: 46px;
+        font-weight: 900;
       }
 
       /* ─────────────── FOOTER ─────────────── */
@@ -705,14 +454,13 @@
           <div class="logo">
             <img src="Logo.PNG" width="120" height="120" alt="Amy Liu logo">
           </div>
-
           <a href="#home">Home</a>
           <a href="#education">Education</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
         </nav>
 
-        <!-- HOME -->
+        <!-- HOME:ABOUT ME -->
         <div id="home">
           <div class="about-container">
             <div class="left-column">
@@ -722,7 +470,6 @@
                 <p><strong>Phone:</strong> 6477690826</p>
               </div>
             </div>
-
             <div class="right-column">
               <h1>About Me</h1>
               <p> As a junior designer, I believe meaningful digital experiences begin with
@@ -734,7 +481,7 @@
                 the world, then weaving those insights into inclusive, thoughtful digital experiences.</p>
             </div>
           </div>
-
+          <!-- HOME:PROJECT SECTION -->
           <div class="projects">
             <h2>Project Overview</h2>
             <div class="project-row">
@@ -764,13 +511,6 @@
         <div id="education">
 
           <!-- ================= TOP BLUE PANEL ================= -->
-          <div class="edu-top">
-
-            <div class="edu-top-grid">
-              <!-- LEFT: EDUCATION -->
-              <div id="education">
-
-          <!-- TOP BLUE PANEL -->
           <div class="edu-top">
 
             <div class="edu-top-grid">
@@ -858,11 +598,11 @@
 
               <div class="exp-grid">
                 <!-- LEFT COLUMN -->
-                <div>
+                <div class="exp-col">
                   <div class="timeline-item">
                     <div class="meta-row">
-                      <span class="meta-star">★</span>
-                      <span class="meta-pill">2021 - 2022</span>
+                      <div class="meta-star">★</div>
+                      <div class="meta-pill">2021 - 2022</div>
                     </div>
                     <h3 class="timeline-title">Global Dental Centre</h3>
                     <p class="timeline-sub">Administrative Assistant</p>
@@ -870,8 +610,8 @@
 
                   <div class="timeline-item">
                     <div class="meta-row">
-                      <span class="meta-star">★</span>
-                      <span class="meta-pill">2022 - 2022</span>
+                      <div class="meta-star">★</div>
+                      <div class="meta-pill">2022 - 2022</div>
                     </div>
                     <h3 class="timeline-title">Eggette Hut</h3>
                     <p class="timeline-sub">Sales Cashier</p>
@@ -879,11 +619,11 @@
                 </div>
 
                 <!-- RIGHT COLUMN -->
-                <div>
+                <div class="exp-col">
                   <div class="timeline-item">
                     <div class="meta-row">
-                      <span class="meta-star">★</span>
-                      <span class="meta-pill">2023 - 2024</span>
+                      <div class="meta-star">★</div>
+                      <div class="meta-pill">2023 - 2024</div>
                     </div>
                     <h3 class="timeline-title">M.Dance Studio</h3>
                     <p class="timeline-sub">Dance Instructor</p>
@@ -891,8 +631,8 @@
 
                   <div class="timeline-item">
                     <div class="meta-row">
-                      <span class="meta-star">★</span>
-                      <span class="meta-pill">2025 - 2025</span>
+                      <div class="meta-star">★</div>
+                      <div class="meta-pill">2025 - 2025</div>
                     </div>
                     <h3 class="timeline-title">3Dz Dance Studio</h3>
                     <p class="timeline-sub">Dance Instructor</p>
@@ -900,119 +640,123 @@
                 </div>
               </div>
             </div>
-          </div>
+            <!-- ================= END TOP BLUE PANEL ================= -->
 
-          <!-- MIDDLE BEIGE PANEL -->
-          <div class="edu-extras">
-            <h2 class="extras-title">Extracurriculars</h2>
 
-            <div class="extras-row">
-              <div class="extra-item">
-                <div class="extra-icon">
-                  <img src="drawing.png" alt="Drawing">
+            <!-- ================= MIDDLE BEIGE PANEL ================= -->
+            <div class="edu-extras">
+              <h2 class="extras-title">Extracurriculars</h2>
+
+              <div class="extras-row">
+                <div class="extra-item">
+                  <div class="extra-icon">
+                    <img src="drawing.png" alt="Drawing">
+                  </div>
+                  <p class="extra-label">Drawing</p>
                 </div>
-                <p class="extra-label">Drawing</p>
-              </div>
 
-              <div class="extra-item">
-                <div class="extra-icon">
-                  <img src="singing.png" alt="Singing">
+                <div class="extra-item">
+                  <div class="extra-icon">
+                    <img src="singing.png" alt="Singing">
+                  </div>
+                  <p class="extra-label">Singing</p>
                 </div>
-                <p class="extra-label">Singing</p>
-              </div>
 
-              <div class="extra-item">
-                <div class="extra-icon">
-                  <img src="dancing.png" alt="Dancing">
+                <div class="extra-item">
+                  <div class="extra-icon">
+                    <img src="dancing.png" alt="Dancing">
+                  </div>
+                  <p class="extra-label">Dancing</p>
                 </div>
-                <p class="extra-label">Dancing</p>
-              </div>
 
-              <div class="extra-item">
-                <div class="extra-icon">
-                  <img src="laptop.png" alt="Watching movies">
+                <div class="extra-item">
+                  <div class="extra-icon">
+                    <img src="laptop.png" alt="Watching movies">
+                  </div>
+                  <p class="extra-label">Watching movies</p>
                 </div>
-                <p class="extra-label">Watching movies</p>
-              </div>
 
-              <div class="extra-item">
-                <div class="extra-icon">
-                  <img src="swimming.png" alt="Swimming">
+                <div class="extra-item">
+                  <div class="extra-icon">
+                    <img src="swimming.png" alt="Swimming">
+                  </div>
+                  <p class="extra-label">Swimming</p>
                 </div>
-                <p class="extra-label">Swimming</p>
-              </div>
 
-              <div class="extra-item">
-                <div class="extra-icon">
-                  <img src="tennis.png" alt="Playing tennis">
+                <div class="extra-item">
+                  <div class="extra-icon">
+                    <img src="tennis.png" alt="Playing tennis">
+                  </div>
+                  <p class="extra-label">Playing tennis</p>
                 </div>
-                <p class="extra-label">Playing tennis</p>
               </div>
             </div>
-          </div>
+            <!-- ================= END MIDDLE BEIGE PANEL ================= -->
 
-          <!-- BOTTOM BLUE PANEL -->
-          <div class="edu-bottom">
-            <div class="bottom-grid">
 
-              <!-- LEFT: LANGUAGES -->
-              <div>
-                <h2 class="edu-heading">Languages</h2>
+            <!-- ================= BOTTOM BLUE PANEL ================= -->
+            <div class="edu-bottom">
+              <div class="bottom-grid">
 
-                <div class="lang-list">
-                  <div class="lang-item">
-                    <div class="lang-name">中文</div>
-                    <div class="lang-level">Fluent</div>
-                  </div>
+                <!-- LEFT: LANGUAGES -->
+                <div>
+                  <h2 class="edu-heading">Languages</h2>
 
-                  <div class="lang-item">
-                    <div class="lang-name">English</div>
-                    <div class="lang-level">Fluent</div>
-                  </div>
+                  <div class="lang-list">
+                    <div class="lang-item">
+                      <div class="lang-name">中文</div>
+                      <div class="lang-level">Fluent</div>
+                    </div>
 
-                  <div class="lang-item">
-                    <div class="lang-name">안녕</div>
-                    <div class="lang-level">Beginner</div>
+                    <div class="lang-item">
+                      <div class="lang-name">English</div>
+                      <div class="lang-level">Fluent</div>
+                    </div>
+
+                    <div class="lang-item">
+                      <div class="lang-name">안녕</div>
+                      <div class="lang-level">Beginner</div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- RIGHT: SCHOOL INVOLVEMENT -->
-              <div>
-                <h2 class="edu-heading">School Involvement</h2>
+                <!-- RIGHT: SCHOOL INVOLVEMENT -->
+                <div>
+                  <h2 class="edu-heading">School Involvement</h2>
 
-                <div class="involve-card">
-                  <ul>
-                    <li>Fashion for Change</li>
-                    <li>Haebeat Dance Crew</li>
-                    <li>Chinese Christian Fellowship</li>
-                  </ul>
+                  <div class="involve-card">
+                    <ul>
+                      <li>Fashion for Change</li>
+                      <li>Haebeat Dance Crew</li>
+                      <li>Chinese Christian Fellowship</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
 
+              </div>
             </div>
+            <!-- ================= END BOTTOM BLUE PANEL ================= -->
+
           </div>
+
+          <!-- SKILLS -->
+          <div id="skills">
+            <h2>Skills</h2>
+            <p>Text-holder: I will add my skills content here later.</p>
+          </div>
+
+          <!-- PROJECTS -->
+          <div id="projects">
+            <h2>Projects</h2>
+            <p>Text-holder: I will add my projects content here later.</p>
+          </div>
+
+          <!-- FOOTER -->
+          <footer>
+            <h2 class="footer-name">Amy Liu</h2>
+            <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
+          </footer>
         </div>
-
-        <!-- SKILLS -->
-        <div id="skills">
-          <h2>Skills</h2>
-          <p>Text-holder: I will add my skills content here later.</p>
-        </div>
-
-        <!-- PROJECTS -->
-        <div id="projects">
-          <h2>Projects</h2>
-          <p>Text-holder: I will add my projects content here later.</p>
-        </div>
-
-        <!-- FOOTER -->
-        <footer>
-          <h2 class="footer-name">Amy Liu</h2>
-          <p class="footer-copyright">© 2025 Amy Liu. All Rights Reserved.</p>
-        </footer>
-
       </div>
-    </div>
   </body>
 </html>
