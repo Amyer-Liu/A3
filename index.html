@@ -589,7 +589,6 @@
 
       .project-detail-section {
         padding: 60px 0;
-        /* no side padding here */
       }
 
       .project-detail-section.burger-ops {
@@ -597,10 +596,9 @@
       }
 
       .project-detail-section.website-redesign {
-        background-color: #ffffff;
+        background-color: #F5F0EB;
       }
 
-      /* Text padding lives here (NOT on the whole section) */
       .project-inner {
         padding: 0 90px;
         box-sizing: border-box;
@@ -616,54 +614,48 @@
         margin: 0 auto;
         width: 100%;
         height: auto;
-        margin-top: -7em;
+        margin-top: -5em;
       }
 
       .project-subtitle {
         font-family: "Indie Flower", cursive;
         font-size: 45px;
         color: #DE3783;
-        margin: 0 0 20px 0;
+        margin: -20px 0 20px 60px;
       }
 
       .project-description {
         font-size: 25px;
-        line-height: 1.8;
+        line-height: 1.6;
         color: #244196;
-        margin: 0 0 40px 0;
+        margin: -10px 0 40px 100px;
         max-width: 1000px;
       }
 
-      /* White background ONLY for the card-images area */
       .all-cards-wrapper {
         width: 100%;
         box-sizing: border-box;
         background-color: #ffffff;
-        border-radius: 28px;
         padding: 40px;
         margin: 0 0 50px 0;
       }
 
-      /* Main 3 cards */
       .cards-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+        gap: 50px;
         margin: 0 0 40px 0;
       }
 
       .card-placeholder {
-        background-color: transparent;
         padding: 0;
         min-height: 320px;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: visible;
-        /* allow fancy card shapes */
       }
 
-      /* IMPORTANT: avoid cropping */
       #projects .card-placeholder img {
         width: 110%;
         height: auto;
@@ -673,7 +665,6 @@
         display: block;
       }
 
-      /* Ingredient cards */
       .ingredient-section {
         margin: 0;
       }
@@ -689,8 +680,6 @@
       .ingredient-card-placeholder {
         width: 180px;
         height: 250px;
-        background-color: transparent;
-        border-radius: 18px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -706,73 +695,84 @@
 
       /* My Role */
       .role-section {
-        background-color: #ffffff;
-        padding: 40px;
-        border-radius: 20px;
-        margin: 0 0 40px 0;
+        padding: 70px;
+        margin: -5em 0 40px -0.85em;
       }
 
       .role-title {
         font-family: "Indie Flower", cursive;
-        font-size: 50px;
-        color: #244196;
+        font-size: 45px;
+        color: #DE3783;
         margin: 0 0 20px 0;
       }
 
       .role-description {
-        font-size: 22px;
-        line-height: 1.8;
+        font-size: 25px;
+        line-height: 1.6;
         color: #244196;
+        margin-left: 1.7em;
+        margin-bottom: -1.5em;
+        margin-top: -10px;
       }
 
-      /* Screenshots (aligned like your cards) */
+      .screenshots-wrapper {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto 50px;
+        background: #fff;
+        padding: 40px;
+        box-sizing: border-box;
+        border-radius: 20px;
+      }
+
       .screenshots-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin: 0;
+        column-count: 2;
+        column-gap: 25px;
       }
 
       .screenshot-placeholder {
-        background-color: #F5F0EB;
+        background: #F5F0EB;
         border-radius: 18px;
         overflow: hidden;
-        min-height: 460px;
-        /* fallback */
-        aspect-ratio: 4 / 3;
+        /* keeps rounded corners */
+        margin: 0 0 25px;
+        /* spacing between cards */
+        break-inside: avoid;
+        /* prevents splitting */
       }
 
+      /* IMPORTANT: correct selector + no forced height + no crop */
       #projects .screenshot-placeholder img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto !important;
+        /* stop height:100% rules */
         display: block;
-      }
-
-      .screenshot-placeholder.full-width {
-        grid-column: 1 / -1;
-        min-height: 560px;
-        aspect-ratio: 16 / 9;
+        object-fit: contain !important;
+        /* stop cover cropping */
       }
 
       .changes-section {
         background-color: #F5F0EB;
         padding: 50px;
         border-radius: 20px;
-        margin: 0 0 50px 0;
+        margin: 0 0 -8em 0;
       }
 
       .changes-title {
         font-family: "Indie Flower", cursive;
         font-size: 55px;
         color: #DE3783;
-        margin: 0 0 30px 0;
+        margin: -60px 0 30px 10px;
       }
 
       .changes-text {
-        font-size: 24px;
-        line-height: 1.9;
+        font-size: 25px;
+        line-height: 1.8;
         color: #244196;
+        max-width: 1000px;
+        margin-left: 50px;
+        margin-top: -1em;
+
       }
 
       /* ─────────────── FOOTER ─────────────── */
@@ -1112,97 +1112,98 @@
         </div>
 
         <!-- PROJECTS SECTION -->
-        <!-- PROJECTS SECTION -->
         <div id="projects">
-
-          <!-- BURGER OPS PROJECT -->
           <section class="project-detail-section burger-ops">
-
-            <div class="project-inner">
-              <div class="project-title-wrapper">
-                <img class="project-title-img" src="Burger.png" width="900" height="300" alt="Burger Ops">
-              </div>
-
-              <h3 class="project-subtitle">What is Burger Ops</h3>
-              <p class="project-description">
-                Burger Ops is a discussion-based card game that simulates real fast-food industry
-                challenges during supply chain disruptions. Players act as managers racing to assemble
-                their signature burgers while navigating obstacles, debating solutions, and managing
-                limited resources.
-              </p>
+            <div class="project-title-wrapper">
+              <img class="project-title-img" src="Burger.png" width="900" height="300" alt="Burger Ops">
             </div>
 
-            <!-- White background ONLY for all card images -->
-            <div class="all-cards-wrapper">
+            <h2 class="project-subtitle">What is Burger Ops</h2>
+            <p class="project-description">
+              Burger Ops is a discussion-based card game that simulates real fast-food industry challenges during supply chain disruptions. Players act as managers racing to assemble their signature burgers while navigating obstacles, debating solutions, and managing limited resources.
+            </p>
 
-              <!-- Main Card Types -->
+            <!-- Main Card Types -->
+            <div class="all-cards-wrapper">
               <div class="cards-grid">
                 <div class="card-placeholder">
-                  <img src="core-card.jpg" alt="Core Ingredient Card">
+                  <img src="core-card.png" alt="Core Ingredient Card">
                 </div>
                 <div class="card-placeholder">
-                  <img src="order-card.jpg" alt="Order Card">
+                  <img src="order-card.png" alt="Order Card">
                 </div>
                 <div class="card-placeholder">
-                  <img src="shipment-card.jpg" alt="Shipment Card">
+                  <img src="shipment-card.png" alt="Shipment Card">
                 </div>
               </div>
 
-              <!-- Ingredient Cards -->
               <div class="ingredient-section">
-
-                <!-- Sauce Cards Row -->
                 <div class="ingredient-cards-wrapper">
-                  <div class="ingredient-card-placeholder"><img src="sauce-card.jpg" alt="Sauce Ingredient Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="ketchup-card.jpg" alt="Ketchup Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="mayo-card.jpg" alt="Mayo Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="mustard-card.jpg" alt="Mustard Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="relish-card.jpg" alt="Relish Card"></div>
-                </div>
+                  <!-- Row 1 -->
+                  <div class="ingredient-card-placeholder">
+                    <img src="sauce.png" alt="Sauce Ingredient Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="ketchup.png" alt="Ketchup Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="mayo.png" alt="Mayo Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="mustard.png" alt="Mustard Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="relish.png" alt="Relish Card">
+                  </div>
 
-                <!-- Topping Cards Row -->
-                <div class="ingredient-cards-wrapper">
-                  <div class="ingredient-card-placeholder"><img src="topping-card.jpg" alt="Topping Ingredient Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="bacon-card.jpg" alt="Bacon Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="pickles-card.jpg" alt="Pickles Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="cheese-card.jpg" alt="Cheese Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="onion-card.jpg" alt="Onion Card"></div>
-                </div>
+                  <!-- Row 2 -->
+                  <div class="ingredient-card-placeholder">
+                    <img src="topping.png" alt="Topping Ingredient Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="bacon.png" alt="Bacon Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="pickles.png" alt="Pickles Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="cheese.png" alt="Cheese Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="onion.png" alt="Onion Card">
+                  </div>
 
-                <!-- Vegetable Cards Row -->
-                <div class="ingredient-cards-wrapper">
-                  <div class="ingredient-card-placeholder"><img src="tomato-card.jpg" alt="Tomato Card"></div>
-                  <div class="ingredient-card-placeholder"><img src="lettuce-card.jpg" alt="Lettuce Card"></div>
+                  <!-- Row 3 -->
+                  <div class="ingredient-card-placeholder">
+                    <img src="tomato.png" alt="Tomato Card">
+                  </div>
+                  <div class="ingredient-card-placeholder">
+                    <img src="lettuce.png" alt="Lettuce Card">
+                  </div>
                 </div>
-
               </div>
             </div>
 
-            <!-- TEXT BELOW ALL CARD IMAGES (NOT inside the white block) -->
-            <div class="project-inner">
-              <h3 class="project-subtitle">Card Types</h3>
-              <p class="project-description">
-                The game uses five card types to guide problem-solving, strategic trading, and
-                ingredient collection. The first player to complete their burger earns the
-                "Manager of the Year" title.
+            <!-- TEXT GOES BELOW ALL CARD IMAGES -->
+            <h3 class="project-subtitle">Card Types</h3>
+            <p class="project-description">
+              The game uses five card types to guide problem-solving, strategic trading, and
+              ingredient collection. The first player to complete their burger earns the
+              "Manager of the Year" title.
+            </p>
+
+            <!-- My Role -->
+            <div class="role-section">
+              <h3 class="role-title">My Role</h3>
+              <p class="role-description">
+                As part of a group project, I designed the core game mechanics, rule system, and
+                card structure. The game encourages critical thinking, teamwork, and adaptive
+                decision-making, reflecting key service design principles in an engaging format.
               </p>
-
-              <div class="role-section">
-                <h3 class="role-title">My Role</h3>
-                <p class="role-description">
-                  As part of a group project, I designed the core game mechanics, rule system, and
-                  card structure. The game encourages critical thinking, teamwork, and adaptive
-                  decision-making, reflecting key service design principles in an engaging format.
-                </p>
-              </div>
             </div>
 
-          </section>
-
-          <!-- WEBSITE REDESIGN PROJECT -->
-          <section class="project-detail-section website-redesign">
-
-            <div class="project-inner">
+            <!-- WEBSITE REDESIGN PROJECT -->
+            <section class="project-detail-section website-redesign">
               <div class="project-title-wrapper">
                 <img class="project-title-img" src="website.png" width="900" height="300" alt="Website Redesign">
               </div>
@@ -1215,24 +1216,18 @@
                 elements were unclear, and the overall design failed to reflect the brand's warmth
                 or identity. A redesign was necessary to improve flow, usability, and brand trust.
               </p>
-            </div>
 
-            <!-- White block for screenshots (aligned like your cards) -->
-            <div class="all-cards-wrapper">
-              <div class="screenshots-grid">
-                <div class="screenshot-placeholder">
-                  <img src="website-screenshot-1.jpg" alt="Website Screenshot 1">
-                </div>
-                <div class="screenshot-placeholder">
-                  <img src="website-screenshot-2.jpg" alt="Website Screenshot 2">
-                </div>
-                <div class="screenshot-placeholder full-width">
-                  <img src="website-screenshot-full.jpg" alt="Full Website Screenshot">
+              <!-- Website Screenshots -->
+              <div class="screenshots-wrapper">
+                <div class="screenshots-grid">
+                  <div class="screenshot-placeholder"><img src="w1.png" alt="Website Screenshot 1"></div>
+                  <div class="screenshot-placeholder"><img src="w2.png" alt="Website Screenshot 2"></div>
+                  <div class="screenshot-placeholder"><img src="w3.png" alt="Website Screenshot 3"></div>
+                  <div class="screenshot-placeholder"><img src="w4.png" alt="Website Screenshot 4"></div>
                 </div>
               </div>
-            </div>
 
-            <div class="project-inner">
+              <!-- What Changed -->
               <div class="changes-section">
                 <h3 class="changes-title">What changed</h3>
                 <p class="changes-text">
@@ -1245,10 +1240,7 @@
                   and consistency.
                 </p>
               </div>
-            </div>
-
-          </section>
-
+            </section>
         </div>
 
         <!-- FOOTER -->
