@@ -2,10 +2,11 @@
 <html lang="en-CA">
   <head>
     <meta charset="UTF-8">
-    <title>Assignment 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amy Liu - Portfolio</title>
     <!-- Created by Amy Liu on 2025 Dec 3 -->
 
-    <!-- Google Fonts - Inconsolata + Indie FLower -->
+    <!-- Google Fonts - Inconsolata + Indie Flower -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&display=swap" rel="stylesheet">
@@ -106,11 +107,15 @@
       }
 
       #education,
-      #skills,
-      #projects {
+      #skills {
         background-color: #ede8e2;
         color: #244196;
         padding: 60px 80px;
+      }
+
+      #projects {
+        background-color: #ffffff;
+        padding: 0;
       }
 
       /* ─────────────── HOME:ABOUT ME SECTION ─────────────── */
@@ -493,7 +498,6 @@
       #skills {
         padding: 0;
         position: relative;
-
       }
 
       #skills .skills-top {
@@ -597,19 +601,11 @@
       }
 
       /* ─────────────── PROJECTS SECTION─────────────── */
-      #projects {
-        background-color: #ffffff;
-        padding: 0;
-      }
-
       .project-detail-section {
         padding: 60px 0;
       }
 
-      .project-detail-section.burger-ops {
-        background-color: #f5f0eb;
-      }
-
+      .project-detail-section.burger-ops,
       .project-detail-section.website-redesign {
         background-color: #f5f0eb;
       }
@@ -873,7 +869,7 @@
           </div>
 
           <!-- HOME:PROJECT SECTION -->
-          <section class="projects">
+          <div class="projects">
             <h2>Project Overview</h2>
             <div class="project-row">
               <a href="#burger-ops" class="project-card">
@@ -897,7 +893,7 @@
                 <p class="project-name">Poster Design</p>
               </a>
             </div>
-          </section>
+          </div>
         </section>
 
         <!-- EDUCATION -->
@@ -1122,7 +1118,7 @@
 
         <!-- PROJECTS SECTION -->
         <section id="projects">
-          <section class="project-detail-section burger-ops" id="burger-ops">
+          <div class="project-detail-section burger-ops" id="burger-ops">
             <div class="project-title-wrapper">
               <img class="project-title-img" src="Burger.png" width="900" height="300" alt="Burger Ops">
             </div>
@@ -1168,7 +1164,8 @@
                 </div>
               </div>
             </div>
-            <!-- CARD TYPE-->
+
+            <!-- Card Types -->
             <h3 class="project-subtitle">Card Types</h3>
             <p class="project-description">
               The game uses five card types to guide problem-solving, strategic trading, and ingredient collection.
@@ -1184,10 +1181,10 @@
                 design principles in an engaging format.
               </p>
             </div>
-          </section>
+          </div>
 
           <!-- WEBSITE REDESIGN PROJECT -->
-          <section class="project-detail-section website-redesign" id="website-redesign">
+          <div class="project-detail-section website-redesign" id="website-redesign">
             <div class="project-title-wrapper">
               <img class="project-title-img" src="website.png" width="900" height="300" alt="Website Redesign">
             </div>
@@ -1200,7 +1197,7 @@
               warmth or identity. A redesign was necessary to improve flow, usability, and brand trust.
             </p>
 
-            <!-- Website Images-->
+            <!-- Website Analysis -->
             <div class="redesign-wrapper">
               <div class="redesign-grid">
 
@@ -1228,6 +1225,7 @@
                     </a>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -1235,10 +1233,16 @@
             <div class="changes-section">
               <h3 class="changes-title">What changed</h3>
               <p class="changes-text">
-                The redesigned website features a warmer colour palette, refined typography, and a clearer visual hierarchy to improve readability and better reflect the brand’s welcoming tone. The layout was reorganized to enhance clarity, including a more structured timetable for store hours and a more prominent contact form. Higher-quality product imagery and more engaging, brand-aligned content strengthen storytelling and credibility. Navigation and interactive elements were streamlined, making key information easier to locate and improving overall usability and consistency.
+                The redesigned website introduces a warmer colour palette, improved typography, and
+                clearer visual hierarchy to enhance readability and brand warmth. Layouts were
+                reorganized for clarity, including a structured timetable for store hours and a more
+                visible contact form. High-quality product images and more personable, brand-focused
+                content strengthen storytelling and credibility. Navigation and interactivity were
+                simplified, making key information easier to find and improving overall usability
+                and consistency.
               </p>
             </div>
-          </section>
+          </div>
         </section>
 
         <!-- FOOTER -->
