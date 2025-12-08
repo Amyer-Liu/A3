@@ -475,24 +475,53 @@
       }
 
       #education .involve-table {
-        background-color: #9dc1d9;
+        background-color: #ffffff;
         margin-top: 40px;
         border-radius: 15px;
         width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #education .involve-table thead {
+        background-color: #9DC1D9;
+      }
+
+      #education .involve-table th {
+        padding: 20px 40px;
+        color: #ffffff;
+        font-size: 35px;
+        font-weight: 700;
+        text-align: left;
+        font-family: "Indie Flower", cursive;
       }
 
       #education .involve-table td {
-        padding: 30px 40px;
-        border-bottom: 1px solid #244196;
-        color: #dE3783;
-        font-size: 33px;
+        padding: 25px 40px;
+        border-bottom: 1px solid #e0e0e0;
+        color: #244196;
+        font-size: 28px;
         line-height: 1.6;
-        font-weight: 700;
+        font-weight: 400;
+        background-color: #f8f8f8;
+      }
+
+      #education .involve-table tr:nth-child(even) td {
+        background-color: #ffffff;
       }
 
       #education .involve-table tr:last-child td {
         border-bottom: none;
       }
+
+      #education .involve-table tr:hover td {
+        background-color: #e6f2ff;
+        transition: background-color 0.2s ease;
+      }
+
+
 
       /* ─────────────── SKILLS SECTION─────────────── */
       #skills {
@@ -1062,22 +1091,25 @@
                 </div>
               </div>
 
-              <div>
-                <h2 class="edu-heading">School Involvement</h2>
-                <table class="involve-table">
-                  <tbody>
-                    <tr>
-                      <td>Fashion for Change</td>
-                    </tr>
-                    <tr>
-                      <td>Haebeat Dance Crew</td>
-                    </tr>
-                    <tr>
-                      <td>Christian Fellowship</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <table class="involve-table">
+                <thead>
+                  <tr>
+                    <th>School Involvement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Fashion for Change</td>
+                  </tr>
+                  <tr>
+                    <td>Haebeat Dance Crew</td>
+                  </tr>
+                  <tr>
+                    <td>Christian Fellowship</td>
+                  </tr>
+                </tbody>
+              </table>
+
             </div>
           </div>
         </section>
